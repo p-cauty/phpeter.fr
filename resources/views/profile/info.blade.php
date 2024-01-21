@@ -11,7 +11,7 @@
                 <div class="card mb-4">
                     <div class="card-header">Mes informations</div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('profile.update') }}">
+                        <form method="post" action="{{ route('dashboard.profile.update') }}">
                             @csrf
                             @method('patch')
                             <!-- Form Row-->
@@ -23,7 +23,7 @@
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="lastname">Last name</label>
+                                    <label class="small mb-1" for="lastname">Nom de famille</label>
                                     <input class="form-control" id="lastname" name="lastname" type="text" value="{{ old('lastname', $user->lastname) }}" />
                                 </div>
                             </div>
