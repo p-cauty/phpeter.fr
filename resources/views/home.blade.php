@@ -66,11 +66,11 @@
     </section>
     <section class="bg-light py-10">
         <div class="container px-5">
-            <div class="row gx-5 align-items-center justify-content-center">
-                <div class="col-md-9 col-lg-6 order-1 order-lg-0" data-aos="fade-right">
-                    <div class="content-skewed content-skewed-right"><img class="content-skewed-item img-fluid shadow-lg rounded-3" src="https://assets.startbootstrap.com/img/screenshots-product-pages/sb-ui-kit-pro/landing-portfolio.png" alt="..." /></div>
+            <div class="row gx-5 pb-5 pb-lg-10 align-items-center justify-content-center">
+                <div class="col-md-9 col-lg-6 order-0 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="content-skewed content-skewed-right"><img class="content-skewed-item img-fluid shadow-lg rounded-3" src="{{ asset('img/pexoo.jpg') }}" alt="..." /></div>
                 </div>
-                <div class="col-lg-6 order-0 order-lg-1 mb-5 mb-lg-0" data-aos="fade-left">
+                <div class="col-lg-6 order-1 mb-5 mb-lg-0" data-aos="fade-left">
                     <div class="mb-5">
                         <h2>Here's What You Get</h2>
                         <p class="lead">When you purchase this UI Kit, you get access to a robust suite of powerful tools and components to help you build your next landing page quickly and easily.</p>
@@ -79,36 +79,51 @@
                         <div class="col-md-6 mb-4">
                             <h6>Landing Pages</h6>
                             <p class="mb-2 small">We've crafted landing page examples for many popular business and product types.</p>
-                            <a class="small text-arrow-icon" href="#!">
-                                Learn More
-                                <i data-feather="arrow-right"></i>
-                            </a>
                         </div>
                         <div class="col-md-6 mb-4">
                             <h6>Page Examples</h6>
                             <p class="mb-2 small mb-0">Use our pre-built page examples to quickly create inner pages to your website.</p>
-                            <a class="small text-arrow-icon" href="#!">
-                                Learn More
-                                <i data-feather="arrow-right"></i>
-                            </a>
                         </div>
                     </div>
                     <div class="row gx-5">
                         <div class="col-md-6 mb-4">
                             <h6>Layouts</h6>
                             <p class="mb-2 small mb-0">Our flex box based layout options make your site beautifully responsive and adaptable to any device.</p>
-                            <a class="small text-arrow-icon" href="#!">
-                                Learn More
-                                <i data-feather="arrow-right"></i>
-                            </a>
                         </div>
                         <div class="col-md-6 mb-4">
                             <h6>Modular Sections</h6>
                             <p class="small mb-0">All of the sections on each page are modular, so you can drop them into an existing page, or start with a new one!</p>
-                            <a class="small text-arrow-icon" href="#!">
-                                Learn More
-                                <i data-feather="arrow-right"></i>
-                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-md-9 col-lg-6 order-0 order-lg-1 mb-5 mb-lg-0" data-aos="fade-left">
+                    <div class="content-skewed content-skewed-left"><img class="content-skewed-item img-fluid shadow-lg rounded-3" src="{{ asset('img/spinnaker.jpg') }}" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-0 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="mb-5">
+                        <h2>Here's What You Get</h2>
+                        <p class="lead">When you purchase this UI Kit, you get access to a robust suite of powerful tools and components to help you build your next landing page quickly and easily.</p>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-md-6 mb-4">
+                            <h6>Landing Pages</h6>
+                            <p class="mb-2 small">We've crafted landing page examples for many popular business and product types.</p>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h6>Page Examples</h6>
+                            <p class="mb-2 small mb-0">Use our pre-built page examples to quickly create inner pages to your website.</p>
+                        </div>
+                    </div>
+                    <div class="row gx-5">
+                        <div class="col-md-6 mb-4">
+                            <h6>Layouts</h6>
+                            <p class="mb-2 small mb-0">Our flex box based layout options make your site beautifully responsive and adaptable to any device.</p>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h6>Modular Sections</h6>
+                            <p class="small mb-0">All of the sections on each page are modular, so you can drop them into an existing page, or start with a new one!</p>
                         </div>
                     </div>
                 </div>
@@ -117,8 +132,9 @@
     </section>
     <section class="bg-white py-10">
         <div class="container px-5">
+            <h2 class="text-center mb-5">Nos avantages</h2>
             <div class="row gx-5 text-center">
-                <div class="col-lg-4 px-lg-5 mb-5 mb-lg-0">
+                <div class="col-lg-4 px-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
                     <div class="icon-stack icon-stack-xl bg-primary text-white mb-4">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -128,7 +144,7 @@
                         parfaitement à vos besoins.
                     </p>
                 </div>
-                <div class="col-lg-4 px-lg-5 mb-5 mb-lg-0">
+                <div class="col-lg-4 px-lg-5 mb-5 mb-lg-0" data-aos="fade-up">
                     <div class="icon-stack icon-stack-xl bg-primary text-white mb-4">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -138,7 +154,7 @@
                         confiance.
                     </p>
                 </div>
-                <div class="col-lg-4 px-lg-5">
+                <div class="col-lg-4 px-lg-5" data-aos="fade-left">
                     <div class="icon-stack icon-stack-xl bg-primary text-white mb-4">
                         <i class="fas fa-comment-alt"></i>
                     </div>
@@ -151,7 +167,63 @@
             </div>
         </div>
     </section>
-    <hr class="m-0" />
+    <section class="bg-primary py-5">
+        <div class="container px-5 py-3">
+            <div class="row gx-5 text-center">
+                <div class="col-lg-4 px-lg-5 mb-5 mb-lg-0">
+                    <h1><span class="increment">140</span>+</h1>
+                    <h5 class="text-uppercase text-white">Projets terminés</h5>
+                </div>
+                <div class="col-lg-4 px-lg-5 mb-5 mb-lg-0">
+                    <h1><span class="increment">30</span>+</h1>
+                    <h5 class="text-uppercase text-white">Clients satisfaits</h5>
+                </div>
+                <div class="col-lg-4 px-lg-5 mb-5 mb-lg-0">
+                    <h1><span class="increment">15</span>+</h1>
+                    <h5 class="text-uppercase text-white">Années d'expérience</h5>
+                </div>
+            </div>
+        </div>
+        <script>
+            // make every element with the class 'increment' animate from 0 to its innerText value when it comes into view
+            const incrementEls = document.querySelectorAll('.increment');
+            const increment = (el) => {
+                const end = parseInt(el.innerText);
+                const duration = 1000;
+                let start = 0;
+                const step = (timestamp) => {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    el.innerText = Math.min(Math.ceil((progress / duration) * end), end);
+                    if (progress < duration) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+
+            let doneOnce = false;
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    if (doneOnce) return;
+
+                    entries.forEach((entry) => {
+                        if (entry.intersectionRatio > 0) {
+                            increment(entry.target);
+                            doneOnce = true;
+                        }
+                    });
+                },
+                {
+                    threshold: 0.5,
+                }
+            );
+
+            incrementEls.forEach((el) => {
+                observer.observe(el);
+            });
+        </script>
+    </section>
     <section class="bg-light pt-10">
         <div class="container px-5">
             <div class="text-center mb-5">
@@ -361,7 +433,7 @@
                     <a class="card text-decoration-none h-100 lift" href="#!">
                         <div class="card-body py-5">
                             <div class="d-flex align-items-center">
-                                <div class="icon-stack icon-stack-xl bg-primary text-white flex-shrink-0"><i data-feather="activity"></i></div>
+                                <div class="icon-stack icon-stack-xl bg-primary text-white flex-shrink-0"><i class="fas fa-signal"></i></div>
                                 <div class="ms-4">
                                     <h5 class="text-primary">Work smarter, not harder</h5>
                                     <p class="card-text text-gray-600">Learn more about how our product can save you time and effort in the long run!</p>
@@ -374,7 +446,7 @@
                     <a class="card text-decoration-none h-100 lift" href="#!">
                         <div class="card-body py-5">
                             <div class="d-flex align-items-center">
-                                <div class="icon-stack icon-stack-xl bg-secondary text-white flex-shrink-0"><i data-feather="code"></i></div>
+                                <div class="icon-stack icon-stack-xl bg-secondary text-white flex-shrink-0"><i class="fas fa-code"></i></div>
                                 <div class="ms-4">
                                     <h5 class="text-secondary">Built for developers</h5>
                                     <p class="card-text text-gray-600">Our components, utilities, and layouts are built with developers in mind.</p>

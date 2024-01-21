@@ -6,10 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/font-awesome-6.5.1.all.min.css') }}" rel="stylesheet" />
-        <link href="{{ asset('css/aos.min.js') }}" rel="stylesheet" />
+        <link href="{{ asset('css/aos.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js" crossorigin="anonymous"></script>
 
         <title>Sites web & logiciels pour les Pros - {{ config('app.name') }}</title>
         <meta name="description" content="PHPeter, le partenaire des Pros pour des sites web et logiciels sur mesure. Expert en développement, nous concrétisons vos idées en applications métiers, vitrines en ligne percutantes et solutions logicielles innovantes. Avec la maintenance et le support inclus, donnez une nouvelle dimension à votre présence en ligne." />
