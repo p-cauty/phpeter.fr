@@ -53,7 +53,7 @@
     <div class="modal fade" id="deleteUserModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="post" action="{{ route('dashboard.profile.destroy') }}">
+                <form method="post" action="{{ route('admin.profile.destroy') }}">
                     @csrf
                     @method('delete')
                     <div class="modal-header">

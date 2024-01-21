@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-require_once __DIR__ . '/dashboard.php';
+require_once __DIR__ . '/admin.php';

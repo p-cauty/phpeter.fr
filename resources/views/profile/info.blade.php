@@ -11,7 +11,7 @@
                 <div class="card mb-4">
                     <div class="card-header">Mes informations</div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('dashboard.profile.update') }}">
+                        <form method="post" action="{{ route('admin.profile.update') }}">
                             @csrf
                             @method('patch')
                             <!-- Form Row-->

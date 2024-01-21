@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class DashboardController extends Controller
+class AdminController extends Controller
 {
     public function index(Request $request): View
     {
-        return view('dashboard');
+        return view('admin');
     }
 }

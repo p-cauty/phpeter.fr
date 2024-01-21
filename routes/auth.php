@@ -1,17 +1,17 @@
 <?php
 
-use App\Http\Controllers\Dashboard\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Dashboard\Auth\ConfirmablePasswordController;
-use App\Http\Controllers\Dashboard\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Dashboard\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Dashboard\Auth\NewPasswordController;
-use App\Http\Controllers\Dashboard\Auth\PasswordController;
-use App\Http\Controllers\Dashboard\Auth\PasswordResetLinkController;
-use App\Http\Controllers\Dashboard\Auth\RegisteredUserController;
-use App\Http\Controllers\Dashboard\Auth\VerifyEmailController;
+use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\Admin\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\Admin\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Admin\Auth\NewPasswordController;
+use App\Http\Controllers\Admin\Auth\PasswordController;
+use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Admin\Auth\RegisteredUserController;
+use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('dashboard')->group(function() {
+Route::prefix('admin')->group(function() {
     Route::middleware('guest')->group(function () {
         Route::get('register', [RegisteredUserController::class, 'create'])
             ->name('register');
