@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <script data-search-pseudo-elements defer
@@ -25,7 +25,7 @@
     <!-- * * Tip * * You can use text or an image for your navbar brand.-->
     <!-- * * * * * * When using an image, we recommend the SVG format.-->
     <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="{{ route('home') }}">{{ config('app.name') }}</a>
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="{{ route('dashboard.home') }}">{{ config('app.name') }}</a>
     <!-- Navbar Items-->
     <ul class="navbar-nav align-items-center ms-auto">
         <!-- User Dropdown-->
@@ -65,7 +65,7 @@
                     <div class="sidenav-menu-heading">Accueil</div>
                     <!-- Sidenav Link (Alerts)-->
                     <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-                    <a class="nav-link" href="{{ route('dashboard.home') }}">
+                    <a class="nav-link {{ routeIs('dashboard.home') ? 'active' : '' }}" href="{{ route('dashboard.home') }}">
                         <div class="nav-link-icon"><i data-feather="activity"></i></div>
                         Tableau de bord
                     </a>
@@ -93,12 +93,7 @@
             <div class="container-xl px-4">
                 <div class="row">
                     <div class="col-md-6 small">Copyright &copy; {{ config('app.name') }}
-                        2023{{ date('Y') > 2023 ? ' - ' . date('Y') : '' }}</div>
-                    <div class="col-md-6 text-md-end small">
-                        <a href="#!">Privacy Policy</a>
-                        &middot;
-                        <a href="#!">Terms &amp; Conditions</a>
-                    </div>
+                        2024{{ date('Y') > 2024 ? ' - ' . date('Y') : '' }}</div>
                 </div>
             </div>
         </footer>
