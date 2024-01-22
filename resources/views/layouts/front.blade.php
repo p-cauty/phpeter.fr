@@ -41,6 +41,18 @@
                                     <li class="nav-item">
                                         <a class="nav-link {{ routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Accueil</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#!">Services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#!">Études de cas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#!">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#!">À propos</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -53,54 +65,94 @@
                     <div class="container px-5">
                         <div class="row gx-5">
                             <div class="col-lg-3">
-                                <div class="footer-brand">SB UI Kit Pro</div>
-                                <div class="mb-3">Design made easy</div>
+                                <div class="footer-brand">{{ config('app.name') }}</div>
+                                <div class="mb-3">Sites web & logiciels pour les Pros</div>
                                 <div class="icon-list-social mb-5">
-                                    <a class="icon-list-social-link" href="#!"><i class="fab fa-instagram"></i></a>
-                                    <a class="icon-list-social-link" href="#!"><i class="fab fa-facebook"></i></a>
-                                    <a class="icon-list-social-link" href="#!"><i class="fab fa-github"></i></a>
-                                    <a class="icon-list-social-link" href="#!"><i class="fab fa-twitter"></i></a>
+                                    <a class="icon-list-social-link" href="https://www.linkedin.com/in/peter-cauty/" target="_blank" rel="noopener">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="https://github.com/p-cauty" target="_blank" rel="noopener">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="https://x.com/p_cauty" target="_blank" rel="noopener">
+                                        <i class="fab fa-x-twitter"></i>
+                                    </a>
+                                    <a class="icon-list-social-link" href="mailto:pro@phpeter.fr" target="_blank" rel="noopener">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-lg-9">
                                 <div class="row gx-5">
                                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                        <div class="text-uppercase-expanded text-xs mb-4">Product</div>
+                                        <div class="text-uppercase-expanded text-xs mb-4">Navigation</div>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="#!">Landing</a></li>
-                                            <li class="mb-2"><a href="#!">Pages</a></li>
-                                            <li class="mb-2"><a href="#!">Sections</a></li>
-                                            <li class="mb-2"><a href="#!">Documentation</a></li>
-                                            <li><a href="#!">Changelog</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                        <div class="text-uppercase-expanded text-xs mb-4">Technical</div>
-                                        <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="#!">Documentation</a></li>
-                                            <li class="mb-2"><a href="#!">Changelog</a></li>
-                                            <li class="mb-2"><a href="#!">Theme Customizer</a></li>
-                                            <li><a href="#!">UI Kit</a></li>
+                                            <li class="mb-2"><a href="#!">
+                                                    <i class="fas fa-home pe-1"></i>
+                                                    Accueil
+                                                </a></li>
+                                            <li class="mb-2"><a href="#!">
+                                                    <i class="fas fa-wrench pe-1"></i>
+                                                    Services
+                                                </a></li>
+                                            <li class="mb-2"><a href="#!">
+                                                    <i class="fas fa-briefcase pe-1"></i>
+                                                    Études de cas
+                                                </a></li>
+                                            <li class="mb-2"><a href="#!">
+                                                    <i class="fas fa-feather pe-1"></i>
+                                                    Blog
+                                                </a></li>
+                                            <li><a href="#!">
+                                                    <i class="fas fa-address-card pe-1"></i>
+                                                    À propos
+                                                </a></li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                                        <div class="text-uppercase-expanded text-xs mb-4">Includes</div>
+                                        <div class="text-uppercase-expanded text-xs mb-4">Contact</div>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="#!">Utilities</a></li>
-                                            <li class="mb-2"><a href="#!">Components</a></li>
-                                            <li class="mb-2"><a href="#!">Layouts</a></li>
-                                            <li class="mb-2"><a href="#!">Code Samples</a></li>
-                                            <li class="mb-2"><a href="#!">Products</a></li>
-                                            <li class="mb-2"><a href="#!">Affiliates</a></li>
-                                            <li><a href="#!">Updates</a></li>
+                                            <li class="mb-2">
+                                                <a href="https://calendly.com/p-cauty/premier-echange" target="_blank" rel="noopener">
+                                                    <i class="fas fa-handshake pe-1"></i>
+                                                    Rendez-vous
+                                                </a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="mailto:pro@phpeter.fr">
+                                                    <i class="fas fa-headset pe-2"></i>
+                                                    Support
+                                                </a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="https://maps.app.goo.gl/pcr53ufJP5raHgfn8" target="_blank" rel="noopener">
+                                                    <i class="fas fa-store-alt pe-1"></i>
+                                                    La Valette-du-Var
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="tel:+33422141382">
+                                                    <i class="fas fa-phone pe-2"></i>
+                                                    04 22 14 13 82
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-md-6">
-                                        <div class="text-uppercase-expanded text-xs mb-4">Legal</div>
+                                        <div class="text-uppercase-expanded text-xs mb-4">Légal</div>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="#!">Privacy Policy</a></li>
-                                            <li class="mb-2"><a href="#!">Terms and Conditions</a></li>
-                                            <li><a href="#!">License</a></li>
+                                            <li class="mb-2"><a href="#!">
+                                                    <i class="fas fa-file-alt pe-1"></i>
+                                                    Mentions légales
+                                                </a></li>
+                                            <li class="mb-2"><a href="https://www.pappers.fr/entreprise/cauty-peter-845088236" target="_blank" rel="noopener">
+                                                    <i class="fas fa-building pe-1"></i>
+                                                    Fiche entreprise
+                                                </a></li>
+                                            <li><a href="#!">
+                                                    <i class="fas fa-file-signature pe-1"></i>
+                                                    CGV
+                                                </a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -108,11 +160,14 @@
                         </div>
                         <hr class="my-5" />
                         <div class="row gx-5 align-items-center">
-                            <div class="col-md-6 small">Copyright &copy; Your Website 2021</div>
-                            <div class="col-md-6 text-md-end small">
-                                <a href="#!">Privacy Policy</a>
+                            <div class="col-md-6 small">
+                                Copyright &copy; {{ config('app.name') }}
+                                2024{{ date('Y') > 2024 ? ' - ' . date('Y') : '' }}
                                 &middot;
-                                <a href="#!">Terms &amp; Conditions</a>
+                                Tous droits réservés
+                            </div>
+                            <div class="col-md-6 text-md-end small">
+                                M. Peter Cauty, Entrepreneur Individuel enregistré sous le numéro SIREN 845 088 236
                             </div>
                         </div>
                     </div>
