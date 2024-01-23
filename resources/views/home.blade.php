@@ -13,20 +13,25 @@
                             de vitrines en ligne percutantes et de solutions logicielles innovantes. Avec la maintenance
                             et le support inclus, donnez une nouvelle dimension à votre présence en ligne.
                         </p>
-                        <a class="btn btn-primary" href="#!">Learn More</a>
+                        <a class="btn btn-primary" href="#mission">
+                            En savoir plus
+                            <span class="fa-flip-vertical">
+                                <i class="fas fa-arrow-up fa-bounce ms-2"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <!-- Mission & engagements -->
-    <section class="bg-white py-5 pt-lg-10">
+    <section class="bg-white py-5 pt-lg-10" id="mission">
         <div class="container px-5 z-1">
             <div class="card shadow-none border-0 mb-10" data-aos="fade-right">
                 <div class="row g-0">
                     <div class="col-md-6"><img class="img-fluid rounded" height="256" src="{{ asset('img/mission.jpg') }}" alt="..." /></div>
                     <div class="col-md-6">
-                        <div class="card-body pt-5 pt-lg-0 pb-0 pe-0">
+                        <div class="card-body p-0 pt-5 pt-lg-0 ps-lg-4">
                             <h1 class="card-title fw-bold text-uppercase mb-2">Notre mission</h1>
                             <hr />
                             <p class="card-text focus my-5">
@@ -37,7 +42,10 @@
                                 exceptionnels. Prenez rendez-vous dès maintenant pour discuter de votre projet.
                             </p>
                             <a class="btn btn-primary" href="https://calendly.com/p-cauty/premier-echange"
-                                target="_blank" rel="noopener">Prendre rendez-vous</a>
+                                target="_blank" rel="noopener">
+                                <i class="fas fa-phone me-2"></i>
+                                Prendre rendez-vous
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -45,7 +53,7 @@
             <div class="card shadow-none border-0 mb-5" data-aos="fade-left">
                 <div class="row g-0">
                     <div class="col-md-6 order-1 order-md-0">
-                        <div class="card-body pt-5 pt-lg-0 ps-0">
+                        <div class="card-body p-0 pt-5 pt-lg-0 pe-lg-4">
                             <h1 class="card-title fw-bold text-uppercase mb-2">Nos engagements</h1>
                             <hr />
                             <p class="card-text focus my-5">
@@ -57,7 +65,10 @@
                                 vraiment.
                             </p>
                             <a class="btn btn-primary" href="https://calendly.com/p-cauty/premier-echange"
-                                target="_blank" rel="noopener">Prendez rendez-vous</a>
+                                target="_blank" rel="noopener">
+                                <i class="fas fa-phone me-2"></i>
+                                Prendez rendez-vous
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 order-0 order-md-1"><img class="img-fluid rounded" src="{{ asset('img/engagements.jpg') }}" alt="..." /></div>
@@ -65,7 +76,7 @@
             </div>
         </div>
     </section>
-    <!-- TODO:Services -->
+    <!-- Services -->
     <section class="bg-light py-10">
         <div class="container px-5">
             <div class="row gx-5 pb-5 pb-lg-10 align-items-center justify-content-center">
@@ -74,61 +85,94 @@
                 </div>
                 <div class="col-lg-6 order-1 mb-5 mb-lg-0" data-aos="fade-left">
                     <div class="mb-5">
-                        <h2>Here's What You Get</h2>
-                        <p class="lead">When you purchase this UI Kit, you get access to a robust suite of powerful tools and components to help you build your next landing page quickly and easily.</p>
+                        <h2>Logiciel métier</h2>
+                        <p class="lead">
+                            Notre coeur d'activité réside dans les logiciels métier sur-mesure. Nous les concevons avec
+                            vous, en nous appuyant sur notre expertise technique et votre expérience de terrain.
+                        </p>
                     </div>
                     <div class="row gx-5">
                         <div class="col-md-6 mb-4">
-                            <h6>Landing Pages</h6>
-                            <p class="mb-2 small">We've crafted landing page examples for many popular business and product types.</p>
+                            <h6>Personnalisable</h6>
+                            <p class="mb-2 small">
+                                Grâce au développement sur-mesure, vous êtes en contrôle total des fonctionnalités de
+                                votre logiciel.
+                            </p>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <h6>Page Examples</h6>
-                            <p class="mb-2 small mb-0">Use our pre-built page examples to quickly create inner pages to your website.</p>
+                            <h6>Evolutif</h6>
+                            <p class="mb-2 small mb-0">
+                                Votre logiciel évolue avec votre activité. Nous assurons son évolution pour qu'il reste
+                                toujours adapté à vos besoins.
+                            </p>
                         </div>
                     </div>
                     <div class="row gx-5">
                         <div class="col-md-6 mb-4">
-                            <h6>Layouts</h6>
-                            <p class="mb-2 small mb-0">Our flex box based layout options make your site beautifully responsive and adaptable to any device.</p>
+                            <h6>Sécurisé</h6>
+                            <p class="mb-2 small mb-0">
+                                Profitez des plus hauts standards de sécurité pour protéger vos données ainsi que celles
+                                de vos clients.
+                            </p>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <h6>Modular Sections</h6>
-                            <p class="small mb-0">All of the sections on each page are modular, so you can drop them into an existing page, or start with a new one!</p>
+                            <h6>Souverain</h6>
+                            <p class="small mb-0">
+                                Pas de frais de licence, pas d'abonnement. Vous êtes propriétaire de votre logiciel et
+                                de vos données.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row gx-5 align-items-center justify-content-center">
+            <div class="row gx-5 align-items-center justify-content-center mb-5">
                 <div class="col-md-9 col-lg-6 order-0 order-lg-1 mb-5 mb-lg-0" data-aos="fade-left">
                     <div class="content-skewed content-skewed-left"><img class="content-skewed-item img-fluid shadow-lg rounded-3" src="{{ asset('img/spinnaker.jpg') }}" alt="..." /></div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-0 mb-5 mb-lg-0" data-aos="fade-right">
                     <div class="mb-5">
-                        <h2>Here's What You Get</h2>
-                        <p class="lead">When you purchase this UI Kit, you get access to a robust suite of powerful tools and components to help you build your next landing page quickly and easily.</p>
+                        <h2>Site vitrine</h2>
+                        <p class="lead">
+                            Votre présence en ligne est essentielle pour votre activité. Nous vous accompagnons dans la
+                            conception de votre site vitrine pour vous permettre de vous démarquer.
+                        </p>
                     </div>
                     <div class="row gx-5">
                         <div class="col-md-6 mb-4">
-                            <h6>Landing Pages</h6>
-                            <p class="mb-2 small">We've crafted landing page examples for many popular business and product types.</p>
+                            <h6>Responsive</h6>
+                            <p class="mb-2 small">
+                                Nous créons des sites qui s'adaptent à tous les appareils, sans compromis, pour
+                                une navigation optimale.
+                            </p>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <h6>Page Examples</h6>
-                            <p class="mb-2 small mb-0">Use our pre-built page examples to quickly create inner pages to your website.</p>
+                            <h6>Visible</h6>
+                            <p class="mb-2 small mb-0">
+                                Votre site est optimisé pour le référencement naturel afin de vous permettre
+                                d'atteindre votre audience.
+                            </p>
                         </div>
                     </div>
                     <div class="row gx-5">
                         <div class="col-md-6 mb-4">
-                            <h6>Layouts</h6>
-                            <p class="mb-2 small mb-0">Our flex box based layout options make your site beautifully responsive and adaptable to any device.</p>
+                            <h6>Moderne</h6>
+                            <p class="mb-2 small mb-0">
+                                Bénéficiez des dernières innovations en matière d'expérience utilisateur pour un site
+                                moderne et percutant.
+                            </p>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <h6>Modular Sections</h6>
-                            <p class="small mb-0">All of the sections on each page are modular, so you can drop them into an existing page, or start with a new one!</p>
+                            <h6>Interactif</h6>
+                            <p class="small mb-0">
+                                Recueil d'avis, programme fidélité, newsletter : restez en contact perpétuel avec vos
+                                clients.
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <a href="#!" class="w-auto btn btn-primary">Voir les études de cas</a>
             </div>
         </div>
     </section>
@@ -331,7 +375,7 @@
             </div>
         </div>
     </section>
-    <!-- TODO:FAQ -->
+    <!-- FAQ -->
     <section class="bg-dark py-10">
         <div class="container px-5">
             <div class="row gx-5 my-5 mt-lg-10">
@@ -339,8 +383,12 @@
                     <div class="d-flex h-100">
                         <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                         <div class="ms-4">
-                            <h5 class="text-white">What is SB UI Kit Pro?</h5>
-                            <p class="text-white-50">SB UI Kit Pro is a fully coded, responsive, Bootstrap based UI toolkit for developers.</p>
+                            <h5 class="text-white">Sous quel délai pourrez-vous développer mon logiciel ?</h5>
+                            <p class="text-white-50">
+                                Le temps de développement d'un logiciel sur-mesure dépend de la complexité et des
+                                fonctionnalités requises. Nous effectuons une analyse approfondie pour estimer le délai,
+                                mais généralement, cela varie de quelques semaines à plusieurs mois.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -348,8 +396,12 @@
                     <div class="d-flex h-100">
                         <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                         <div class="ms-4">
-                            <h5 class="text-white">What can I build with SB UI Kit Pro?</h5>
-                            <p class="text-white-50">Build anything you want to using this UI kit! It is flexible, multipurpose, and full of tools for you to use during development.</p>
+                            <h5 class="text-white">Mon site sera-t-il protégé contre les cyberattaques ?</h5>
+                            <p class="text-white-50">
+                                La sécurité est notre priorité. Nous mettons en œuvre des protocoles de sécurité avancés,
+                                des audits réguliers, et nous suivons les meilleures pratiques de l'industrie pour
+                                garantir la protection de votre site contre les cyberattaques.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -357,8 +409,12 @@
                     <div class="d-flex h-100">
                         <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                         <div class="ms-4">
-                            <h5 class="text-white">Do I get free updates?</h5>
-                            <p class="text-white-50">All of Start Bootstrap's premium products will come with updates for feature additions, bugfixes, and other small updates.</p>
+                            <h5 class="text-white">Y a-t-il accompagnement une fois mon logiciel terminé ?</h5>
+                            <p class="text-white-50">
+                                Absolument ! Notre service ne se termine pas à la livraison du produit. Nous offrons un
+                                service après-vente complet, y compris la maintenance régulière, les mises à jour de
+                                sécurité et un support technique continu pour répondre à vos besoins en évolution.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -366,8 +422,12 @@
                     <div class="d-flex h-100">
                         <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                         <div class="ms-4">
-                            <h5 class="text-white">What frameworks does it integrate with?</h5>
-                            <p class="text-white-50">Our HTML based pro products are build with framework integration in mind. The compiled code is HTML and CSS, which is able to integrate with any framework.</p>
+                            <h5 class="text-white">Mon logiciel fonctionnera-t-il sur mon smartphone ?</h5>
+                            <p class="text-white-50">
+                                Oui, nous développons des solutions sur-mesure en gardant à l'esprit la compatibilité
+                                multiplateforme. Votre logiciel métier sera optimisé pour fonctionner sur divers appareils,
+                                y compris les smartphones, garantissant ainsi une accessibilité maximale partout dans le monde.
+                            </p>
                         </div>
                     </div>
                 </div>
