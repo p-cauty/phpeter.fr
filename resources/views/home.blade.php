@@ -43,7 +43,7 @@
                             </p>
                             <a class="btn btn-primary" href="https://calendly.com/p-cauty/premier-echange"
                                 target="_blank" rel="noopener">
-                                <i class="fas fa-phone me-2"></i>
+                                <i class="fas fa-calendar-alt me-2"></i>
                                 Prendre rendez-vous
                             </a>
                         </div>
@@ -66,7 +66,7 @@
                             </p>
                             <a class="btn btn-primary" href="https://calendly.com/p-cauty/premier-echange"
                                 target="_blank" rel="noopener">
-                                <i class="fas fa-phone me-2"></i>
+                                <i class="fas fa-calendar-alt me-2"></i>
                                 Prendez rendez-vous
                             </a>
                         </div>
@@ -172,7 +172,10 @@
                 </div>
             </div>
             <div class="row gx-5 justify-content-center">
-                <a href="#!" class="w-auto btn btn-primary">Voir les études de cas</a>
+                <a href="#!" class="w-auto btn btn-primary">
+                    <i class="fas fa-eye me-2"></i>
+                    Voir les études de cas
+                </a>
             </div>
         </div>
     </section>

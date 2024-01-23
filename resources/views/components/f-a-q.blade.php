@@ -55,5 +55,12 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center">
+            <a class="btn btn-primary w-auto" href="https://calendly.com/p-cauty/premier-echange"
+               target="_blank" rel="noopener">
+                <i class="fas fa-calendar-alt me-2"></i>
+                Prendre rendez-vous
+            </a>
+        </div>
     </div>
 </section>
