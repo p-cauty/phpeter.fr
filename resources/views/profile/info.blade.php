@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <x-slot name="header">
         <x-profile-header />
     </x-slot>
@@ -51,4 +51,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

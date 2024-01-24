@@ -20,6 +20,6 @@ class EmailVerificationNotificationController extends Controller
 
         $request->user()->sendEmailVerificationNotification();
 
-        return back()->with('status', __('Verification email sent!'));
+        return back()->with('success', __('Verification email sent!'));
     }
 }

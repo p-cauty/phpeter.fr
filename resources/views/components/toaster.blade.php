@@ -1,6 +1,6 @@
 <div class="toast-container position-absolute top-0 end-0 p-3" id="toaster">
-    @if (session('status'))
-        <x-toast theme="success" :message="session('status')" />
+    @if (session('success'))
+        <x-toast theme="success" :message="session('success')" />
     @endif
     @if ($errors->any())
         @foreach ($errors->all() as $error)
