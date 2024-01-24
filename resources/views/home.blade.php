@@ -77,7 +77,7 @@
         </div>
     </section>
     <!-- Services -->
-    <section class="bg-light py-10">
+    <section class="bg-light py-10" id="services">
         <div class="container px-5">
             <div class="row gx-5 pb-5 pb-lg-10 align-items-center justify-content-center">
                 <div class="col-md-9 col-lg-6 order-0 mb-5 mb-lg-0" data-aos="fade-right">

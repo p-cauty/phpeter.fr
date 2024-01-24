@@ -39,19 +39,16 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto me-lg-5">
                                     <li class="nav-item">
-                                        <a class="nav-link {{ routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Accueil</a>
+                                        <a class="nav-link" href="{{ route('home') }}">Accueil</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#!">Services</a>
+                                        <a class="nav-link" href="{{ route('home') }}#services">Services</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#!">Études de cas</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#!">Blog</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#!">À propos</a>
                                     </li>
                                 </ul>
                             </div>
@@ -87,26 +84,30 @@
                                     <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
                                         <div class="text-uppercase-expanded text-xs mb-4">Navigation</div>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="#!">
+                                            <li class="mb-2">
+                                                <a href="#!">
                                                     <i class="fas fa-home pe-1"></i>
                                                     Accueil
-                                                </a></li>
-                                            <li class="mb-2"><a href="#!">
+                                                </a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="{{ route('home') }}#services">
                                                     <i class="fas fa-wrench pe-1"></i>
                                                     Services
-                                                </a></li>
-                                            <li class="mb-2"><a href="#!">
+                                                </a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#!">
                                                     <i class="fas fa-briefcase pe-1"></i>
                                                     Études de cas
-                                                </a></li>
-                                            <li class="mb-2"><a href="#!">
+                                                </a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="#!">
                                                     <i class="fas fa-feather pe-1"></i>
                                                     Blog
-                                                </a></li>
-                                            <li><a href="#!">
-                                                    <i class="fas fa-address-card pe-1"></i>
-                                                    À propos
-                                                </a></li>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
@@ -141,18 +142,24 @@
                                     <div class="col-lg-3 col-md-6">
                                         <div class="text-uppercase-expanded text-xs mb-4">Légal</div>
                                         <ul class="list-unstyled mb-0">
-                                            <li class="mb-2"><a href="#!">
+                                            <li class="mb-2">
+                                                <a href="#!">
                                                     <i class="fas fa-file-alt pe-1"></i>
                                                     Mentions légales
-                                                </a></li>
-                                            <li class="mb-2"><a href="https://www.pappers.fr/entreprise/cauty-peter-845088236" target="_blank" rel="noopener">
+                                                </a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a href="https://www.pappers.fr/entreprise/cauty-peter-845088236" target="_blank" rel="noopener">
                                                     <i class="fas fa-building pe-1"></i>
                                                     Fiche entreprise
-                                                </a></li>
-                                            <li><a href="#!">
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!">
                                                     <i class="fas fa-file-signature pe-1"></i>
                                                     CGV
-                                                </a></li>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
