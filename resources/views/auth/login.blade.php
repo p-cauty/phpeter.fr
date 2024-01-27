@@ -35,13 +35,6 @@
                         </div>
                     </form>
                 </div>
-                <hr class="my-0" />
-                <div class="card-body px-5 py-4">
-                    <div class="small text-center">
-                        Pas encore inscrit ?
-                        <a href="{{ route('register') }}">Créer un compte</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

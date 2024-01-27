@@ -36,7 +36,7 @@ class CaseStudyController extends Controller
     {
         $validated = $request->validated();
 
-        $validated['illustration'] = $request->file('illustration')->store('case-studies');
+        $validated['illustration'] = $request->file('illustration')->storePublicly('public/case-studies');
         CaseStudy::create($validated);
 
         return redirect()->route('admin.case-studies.index')
@@ -44,17 +44,9 @@ class CaseStudyController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(CaseStudy $case_study)
     {
         //
     }
@@ -62,7 +54,7 @@ class CaseStudyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, CaseStudy $case_study)
     {
         //
     }
@@ -70,7 +62,7 @@ class CaseStudyController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(CaseStudy $case_study)
     {
         //
     }

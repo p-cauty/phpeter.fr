@@ -73,6 +73,11 @@
                                 <div class="nav-link-icon"><i data-feather="briefcase"></i></div>
                                 Etudes de cas
                             </a>
+
+                            <a class="nav-link mt-5" href="{{ route('home') }}">
+                                <div class="nav-link-icon"><i data-feather="external-link"></i></div>
+                                Retour au site
+                            </a>
                         </div>
                     </div>
                     <!-- Sidenav Footer-->

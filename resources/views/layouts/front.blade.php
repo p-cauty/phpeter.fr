@@ -32,9 +32,9 @@
             <div id="layoutDefault_content">
                 <main>
                     <!-- Navbar-->
-                    <nav class="navbar navbar-marketing navbar-expand-lg bg-{{ routeIs('home') ? 'transparent' : 'dark' }} navbar-dark fixed-top">
+                    <nav class="navbar navbar-marketing navbar-expand-lg bg-transparent navbar-dark fixed-top" id="main-nav">
                         <div class="container px-5">
-                            <a class="navbar-brand text-white" href="index.html">{{ config('app.name') }}</a>
+                            <a class="navbar-brand text-white" href="{{ route('home') }}">{{ config('app.name') }}</a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i  class="fas fa-ellipsis-vertical"></i></button>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto me-lg-5">
@@ -45,7 +45,7 @@
                                         <a class="nav-link" href="{{ route('home') }}#services">Services</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#!">Études de cas</a>
+                                        <a class="nav-link" href="{{ route('case-studies.index') }}">Études de cas</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#!">Blog</a>
@@ -182,11 +182,22 @@
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.0/lity.min.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/scripts.js') }}"></script>
+        <script src="{{ asset('js/aos.min.js') }}"></script>
         <script>
+            const nav = document.getElementById('main-nav');
+            const header = document.getElementsByTagName('header')[0];
+            const firstSection = document.getElementsByTagName('section')[0];
+
+            if (header === undefined) {
+                nav.className = nav.className.replace('bg-transparent', 'bg-dark');
+
+                if (firstSection) {
+                    firstSection.style.marginTop = `${nav.offsetHeight}px`;
+                }
+            }
+
             AOS.init({
                 disable: 'mobile',
                 duration: 600,

@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div class="row gx-5 justify-content-center">
-                <a href="#!" class="w-auto btn btn-primary">
+                <a href="{{ route('case-studies.index') }}" class="w-auto btn btn-primary">
                     <i class="fas fa-eye me-2"></i>
                     Voir les études de cas
                 </a>

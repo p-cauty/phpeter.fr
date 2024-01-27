@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CaseStudyController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
+Route::get('etudes-de-cas', [CaseStudyController::class, 'index'])
+    ->name('case-studies.index');
+Route::get('etudes-de-cas/{case_study}/{slug}', [CaseStudyController::class, 'show'])
+    ->name('case-studies.show');
 
 require_once __DIR__ . '/admin.php';
