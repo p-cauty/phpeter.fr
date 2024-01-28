@@ -86,7 +86,7 @@
                                         <div class="text-uppercase-expanded text-xs mb-4">Navigation</div>
                                         <ul class="list-unstyled mb-0">
                                             <li class="mb-2">
-                                                <a href="#!">
+                                                <a href="{{ route('home') }}#">
                                                     <i class="fas fa-home pe-1"></i>
                                                     Accueil
                                                 </a>
@@ -98,7 +98,7 @@
                                                 </a>
                                             </li>
                                             <li class="mb-2">
-                                                <a href="#!">
+                                                <a href="{{ route('case-studies.index') }}">
                                                     <i class="fas fa-briefcase pe-1"></i>
                                                     Études de cas
                                                 </a>
