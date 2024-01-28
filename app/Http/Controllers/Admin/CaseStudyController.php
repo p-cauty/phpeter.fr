@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CaseStudyRequest;
 use App\Models\CaseStudy;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CaseStudyController extends Controller
 {
@@ -32,12 +32,20 @@ class CaseStudyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CaseStudyRequest $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        $validated = $request->validated();
+        $validated = $request->validate([
+            'title' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'illustration' => ['required', 'image', 'max:1024'],
+            'content' => ['required', 'string'],
+        ]);
 
         $validated['illustration'] = $request->file('illustration')->storePublicly('public/case-studies');
-        CaseStudy::create($validated);
+        CaseStudy::create([
+            ...$validated,
+            'html' => markdown($validated['content'])
+        ]);
 
         return redirect()->route('admin.case-studies.index')
             ->with('success', 'L\'étude de cas a bien été créée.');
@@ -46,24 +54,47 @@ class CaseStudyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CaseStudy $case_study)
+    public function edit(CaseStudy $case_study): View
     {
-        //
+        return view('admin.case-studies.edit', [
+            'case_study' => $case_study,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CaseStudy $case_study)
+    public function update(Request $request, CaseStudy $case_study): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'title' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'illustration' => ['nullable', 'image', 'max:1024'],
+            'content' => ['required', 'string'],
+        ]);
+
+        if ($request->hasFile('illustration')) {
+            $validated['illustration'] = $request->file('illustration')->storePublicly('public/case-studies');
+            Storage::delete($case_study->illustration);
+        }
+
+        $case_study->update([
+            ...$validated,
+            'html' => markdown($validated['content'])
+        ]);
+
+        return redirect()->route('admin.case-studies.edit', ['case_study' => $case_study])
+            ->with('success', 'L\'étude de cas a bien été modifiée.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CaseStudy $case_study)
+    public function destroy(CaseStudy $case_study): RedirectResponse
     {
-        //
+        $case_study->delete();
+
+        return redirect()->route('admin.case-studies.index')
+            ->with('success', 'L\'étude de cas a bien été supprimée.');
     }
 }

@@ -35,6 +35,10 @@
                         </div>
                     </form>
                 </div>
+                <div class="card-footer text-center py-4 small">
+                    <a href="{{ route('home') }}">
+                        &larr; Retour au site
+                    </a>
             </div>
         </div>
     </div>

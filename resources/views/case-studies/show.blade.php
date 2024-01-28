@@ -10,8 +10,10 @@
                         {{ $case_study->description }}
                     </p>
                     <hr />
-                    {!! markdown($case_study->content) !!}
+                    {!! $case_study->html !!}
             </div>
         </div>
     </section>
+    <script src="{{ asset('js/highlight.min.js') }}"></script>
+    <script>hljs.highlightAll();</script>
 </x-front-layout>

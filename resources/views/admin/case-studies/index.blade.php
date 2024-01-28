@@ -49,8 +49,9 @@
                                             <form action="{{ route('admin.case-studies.destroy', $case_study) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous vraiment supprimer cette étude de cas ?')">
-                                                    <i class="fas fa-trash"></i>
+                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('Voulez-vous vraiment supprimer cette étude de cas ? Cette action est irréversible.')">
+                                                    <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </form>
                                         </td>

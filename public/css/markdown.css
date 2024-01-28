@@ -14,10 +14,10 @@
 }
 
 .markdown pre {
-    background-color: #2c3e50;
+    background-color: #282c34;;
     color: #ccc;
     border-radius: 8px;
-    border: 1px solid #34495e;
+    border: 1px solid #454c57;
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     padding: 10px;
     overflow: auto;
@@ -35,4 +35,32 @@
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+}
+
+.markdown .alert {
+    display: flex;
+    align-items: center;
+}
+
+.markdown .alert:before {
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+
+.markdown .alert-info::before {
+    content: "\f05a";
+}
+
+.markdown .alert-warning::before {
+    content: "\f071";
+}
+
+.markdown .alert-danger::before {
+    content: "\f06a";
+}
+
+.markdown .alert-success::before {
+    content: "\f058";
 }

@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description
  * @property string $illustration
  * @property string $content
+ * @property string $html
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|CaseStudy newModelQuery()
@@ -36,5 +37,6 @@ class CaseStudy extends Model
         'description',
         'illustration',
         'content',
+        'html',
     ];
 }
