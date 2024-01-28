@@ -10,7 +10,7 @@
                         {{ $case_study->description }}
                     </p>
                     <hr />
-                    {!! \Illuminate\Support\Str::markdown($case_study->content) !!}
+                    {!! markdown($case_study->content) !!}
             </div>
         </div>
     </section>
