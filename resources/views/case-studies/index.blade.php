@@ -21,7 +21,7 @@
                         'case_study' => $case_study,
                         'slug' => \Illuminate\Support\Str::of($case_study->title)->slug()
                     ]) }}">
-                        <img class="card-img-top" src="{{ \Illuminate\Support\Facades\Storage::url($case_study->illustration) }}" alt="..." />
+                        <div class="card-header" style="background-image:url({{ \Illuminate\Support\Facades\Storage::url($case_study->illustration) }})"></div>
                         <div class="card-body"><div class="card-title">{{ $case_study->title }}</div></div>
                     </a>
                 </div>

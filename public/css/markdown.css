@@ -1,0 +1,37 @@
+.markdown blockquote {
+    border-left: 5px solid #ccc;
+    padding: 0 10px;
+    color: #777;
+}
+
+.markdown code {
+    background-color: #f8f8f8;
+    color: #333;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px;
+}
+
+.markdown pre {
+    background-color: /* dark */ #333;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 10px;
+    overflow: auto;
+}
+
+.markdown pre code {
+    background-color: transparent;
+    color: /* light */ #ccc;
+    border: none;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 0;
+}
+
+.markdown img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

@@ -8,6 +8,7 @@
         <link href="{{ asset('css/font-awesome-6.5.1.all.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/aos.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/markdown.css') }}" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" />
 
         <title>Sites web & logiciels pour les Pros - {{ config('app.name') }}</title>

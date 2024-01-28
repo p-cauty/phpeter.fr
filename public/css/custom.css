@@ -30,6 +30,13 @@ html {
     opacity: 0.9999;
 }
 
+.card-portfolio .card-header {
+    height: 280px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 @media screen {
     html:not(.no-js) [data-aos^="fade"][data-aos^="fade"].aos-animate {
         opacity: 0.9999 !important;
@@ -49,5 +56,9 @@ html {
     .page-header-ui {
         padding-top: 4rem;
         padding-bottom: 4rem;
+    }
+
+    .card-portfolio .card-header {
+        height: 200px;
     }
 }
