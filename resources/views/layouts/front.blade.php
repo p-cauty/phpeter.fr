@@ -50,7 +50,7 @@
                                         <a class="nav-link" href="{{ route('case-studies.index') }}">Études de cas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#!">Blog</a>
+                                        <a class="nav-link" href="{{ route('blog.index') }}">Blog</a>
                                     </li>
                                 </ul>
                             </div>
@@ -105,7 +105,7 @@
                                                 </a>
                                             </li>
                                             <li class="mb-2">
-                                                <a href="#!">
+                                                <a href="{{ route('blog.index') }}">
                                                     <i class="fas fa-feather pe-1"></i>
                                                     Blog
                                                 </a>

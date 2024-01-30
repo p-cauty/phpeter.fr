@@ -47,4 +47,7 @@
             </div>
         </div>
     </section>
+    <x-statistics />
+    <x-testimonials />
+    <x-f-a-q />
 </x-front-layout>
