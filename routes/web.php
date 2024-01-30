@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CaseStudyController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
+
 Route::get('etudes-de-cas', [CaseStudyController::class, 'index'])
     ->name('case-studies.index');
 Route::get('etudes-de-cas/{case_study}/{slug}', [CaseStudyController::class, 'show'])
     ->name('case-studies.show');
 
-require_once __DIR__ . '/admin.php';
+Route::get('blog', [BlogController::class, 'index'])
+    ->name('blog.index');
+Route::get('blog/{blog}/{slug}', [BlogController::class, 'show'])
+    ->name('blog.show');
+
+require __DIR__ . '/admin.php';

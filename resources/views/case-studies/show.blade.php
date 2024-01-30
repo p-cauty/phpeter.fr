@@ -1,9 +1,12 @@
 @php /** @var \App\Models\CaseStudy $case_study */ @endphp
 <x-front-layout>
-    <section class="bg-light py-10">
+    <section class="bg-light py-5 pb-lg-10">
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 markdown">
+                    <a href="{{ route('case-studies.index') }}" class="d-inline-block mb-3">
+                        &larr; Retour
+                    </a>
                     <h1>{{ $case_study->title }}</h1>
                     <h3 class="text-gray-700">Étude de cas</h3>
                     <p class="lead">
@@ -11,6 +14,9 @@
                     </p>
                     <hr />
                     {!! $case_study->html !!}
+                    <a href="{{ route('case-studies.index') }}" class="d-inline-block mt-3">
+                        &larr; Retour
+                    </a>
             </div>
         </div>
     </section>

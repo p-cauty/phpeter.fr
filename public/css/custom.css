@@ -62,3 +62,10 @@ html {
         height: 200px;
     }
 }
+
+@media (max-width: 575px) {
+    .container {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}

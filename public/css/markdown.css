@@ -1,5 +1,16 @@
+.markdown p,
+.markdown div,
+.markdown ul,
+.markdown ol,
+.markdown blockquote,
+.markdown pre,
+.markdown table {
+    margin: 2rem 0;
+}
+
 .markdown blockquote {
-    border-left: 5px solid #bdc3c7;
+    background-color: #e6eaef;
+    border-left: 5px solid #e74c3c;
     padding: 0 10px;
     color: #777;
 }
@@ -22,14 +33,6 @@
     padding: 10px;
     overflow: auto;
 }
-
-/*.markdown pre code {
-    background-color: transparent;
-    color: #ccc;
-    border: none;
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 0;
-}*/
 
 .markdown img {
     max-width: 100%;
@@ -63,4 +66,33 @@
 
 .markdown .alert-success::before {
     content: "\f058";
+}
+
+.markdown table {
+    border-collapse: collapse;
+    caption-side: bottom;
+    border-spacing: 0;
+    width: 100%;
+    overflow: auto;
+    color: #69707a;
+}
+
+.markdown table th,
+.markdown table td {
+    padding: .75rem;
+    border: 1px solid #e0e5ec;
+}
+
+.markdown table th {
+    background-color: var(--bs-light);
+    font-weight: 700;
+    border-bottom: 2px solid #69707a;
+}
+
+.markdown table td {
+    background-color: var(--bs-light);
+}
+
+.markdown table tr:nth-child(odd) td {
+    background-color: #e6eaef;
 }

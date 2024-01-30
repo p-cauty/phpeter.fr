@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -15,7 +16,14 @@ Route::prefix('admin')->group(function() {
             Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
             Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+            Route::put('/case-studies/{case_study}/publish', [CaseStudyController::class, 'publish'])->name('case-studies.publish');
+            Route::put('/case-studies/{case_study}/draft', [CaseStudyController::class, 'draft'])->name('case-studies.draft');
             Route::resource('case-studies', CaseStudyController::class)
+                ->except(['show']);
+
+            Route::put('/blogs/{blog}/publish', [BlogController::class, 'publish'])->name('blogs.publish');
+            Route::put('/blogs/{blog}/draft', [BlogController::class, 'draft'])->name('blogs.draft');
+            Route::resource('blogs', BlogController::class)
                 ->except(['show']);
         });
     });

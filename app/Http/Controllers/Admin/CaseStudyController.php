@@ -42,6 +42,10 @@ class CaseStudyController extends Controller
         ]);
 
         $validated['illustration'] = $request->file('illustration')->storePublicly('public/case-studies');
+        if ($request->has('publish')) {
+            $validated['published_at'] = now();
+        }
+
         CaseStudy::create([
             ...$validated,
             'html' => markdown($validated['content'])
@@ -49,6 +53,26 @@ class CaseStudyController extends Controller
 
         return redirect()->route('admin.case-studies.index')
             ->with('success', 'L\'étude de cas a bien été créée.');
+    }
+
+    public function publish(CaseStudy $case_study): RedirectResponse
+    {
+        $case_study->update([
+            'published_at' => now(),
+        ]);
+
+        return redirect()->route('admin.case-studies.index')
+            ->with('success', 'L\'étude de cas a bien été publiée.');
+    }
+
+    public function draft(CaseStudy $case_study): RedirectResponse
+    {
+        $case_study->update([
+            'published_at' => null,
+        ]);
+
+        return redirect()->route('admin.case-studies.index')
+            ->with('success', 'L\'étude de cas a bien été dé-publiée.');
     }
 
     /**
@@ -76,6 +100,12 @@ class CaseStudyController extends Controller
         if ($request->hasFile('illustration')) {
             $validated['illustration'] = $request->file('illustration')->storePublicly('public/case-studies');
             Storage::delete($case_study->illustration);
+        }
+
+        if (!$request->has('publish')) {
+            $validated['published_at'] = null;
+        } elseif (!$case_study->isPublished()) {
+            $validated['published_at'] = now();
         }
 
         $case_study->update([

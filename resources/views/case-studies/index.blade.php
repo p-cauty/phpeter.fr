@@ -38,7 +38,8 @@
                         Prenez rendez-vous dès maintenant pour discuter de vos projets web avec notre expert.
                         L'analyse de vos besoins est gratuite et sans engagement.
                     </p>
-                    <a class="btn btn-primary fw-500" href="https://calendly.com/p-cauty/premier-echange">
+                    <a class="btn btn-primary fw-500" href="https://calendly.com/p-cauty/premier-echange"
+                        target="_blank" rel="noopener">
                         <i class="fas fa-calendar-alt me-2"></i>
                         Prendre rendez-vous
                     </a>

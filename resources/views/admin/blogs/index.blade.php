@@ -1,4 +1,4 @@
-@php /** @var \App\Models\CaseStudy[] $case_studies */ @endphp
+@php /** @var \App\Models\Blog[] $blogs */ @endphp
 <x-admin-layout>
     <x-slot name="header">
         <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
@@ -7,10 +7,10 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
-                                <div class="page-header-icon"><i data-feather="briefcase"></i></div>
-                                Etudes de cas
+                                <div class="page-header-icon"><i data-feather="feather"></i></div>
+                                Articles de blog
                             </h1>
-                            <div class="page-header-subtitle">Gérer les études de cas publiées sur le site</div>
+                            <div class="page-header-subtitle">Gérer les articles de blogs visibles sur le site</div>
                         </div>
                     </div>
                 </div>
@@ -22,41 +22,45 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ route('admin.case-studies.create') }}" class="btn btn-success mb-3">
+                        <a href="{{ route('admin.blogs.create') }}" class="btn btn-success mb-3">
                             <i class="fas fa-plus-circle me-2"></i>
-                            Nouvelle étude de cas
+                            Nouvel article
                         </a>
                         <div class="table-responsive">
                             <table id="datatable" class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
-                                        <th>Titre</th>
-                                        <th>Statut</th>
-                                        <th>Création</th>
-                                        <th>Modification</th>
-                                        <th>Actions</th>
-                                    </tr>
+                                <tr>
+                                    <th>Titre</th>
+                                    <th>Auteur</th>
+                                    <th>Statut</th>
+                                    <th>Création</th>
+                                    <th>Modification</th>
+                                    <th>Actions</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($case_studies as $case_study)
+                                @foreach ($blogs as $blog)
                                     <tr>
-                                        <td>{{ $case_study->title }}</td>
+                                        <td>{{ $blog->title }}</td>
+                                        <td>{{ $blog->user->fullname }}</td>
                                         <td>{!!
-                                            $case_study->isPublished() ?
+                                            $blog->isPublished() ?
                                                 '<span class="badge bg-success rounded-pill">Publié</span>' :
                                                 '<span class="badge bg-primary rounded-pill">Brouillon</span>'
                                         !!}</td>
-                                        <td>{{ $case_study->created_at->format('d/m/Y H:i') }}</td>
-                                        <td>{{ $case_study->updated_at->format('d/m/Y H:i') }}</td>
+                                        <td>{{ $blog->created_at->format('d/m/Y H:i') }}</td>
+                                        <td>{{ $blog->updated_at->format('d/m/Y H:i') }}</td>
                                         <td>
-                                            <a href="{{ route('admin.case-studies.edit', $case_study) }}" class="btn btn-primary btn-sm">
+                                            <a href="{{ route('admin.blogs.edit', $blog) }}"
+                                               class="btn btn-primary btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <form action="{{ route('admin.case-studies.destroy', $case_study) }}" method="POST" class="d-inline">
+                                            <form action="{{ route('admin.blogs.destroy', $blog) }}"
+                                                  method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm"
-                                                    onclick="return confirm('Voulez-vous vraiment supprimer cette étude de cas ? Cette action est irréversible.')">
+                                                        onclick="return confirm('Voulez-vous vraiment supprimer cet article ? Cette action est irréversible.')">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </form>

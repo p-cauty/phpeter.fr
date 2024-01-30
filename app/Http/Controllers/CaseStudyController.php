@@ -14,7 +14,7 @@ class CaseStudyController extends Controller
     public function index(): View
     {
         return view('case-studies.index', [
-            'case_studies' => CaseStudy::latest()->get(),
+            'case_studies' => CaseStudy::whereNotNull('published_at')->orderBy('published_at', 'desc')->get(),
         ]);
     }
 
@@ -23,6 +23,10 @@ class CaseStudyController extends Controller
      */
     public function show(CaseStudy $case_study): View
     {
+        if (!$case_study->isPublished()) {
+            abort(404);
+        }
+
         return view('case-studies.show', [
             'case_study' => $case_study,
         ]);

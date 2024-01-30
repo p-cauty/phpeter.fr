@@ -44,7 +44,7 @@
                     <div class="card-header">Photo</div>
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2" src="{{ $user->gravatar() }}" alt="Gravatar" />
+                        <img class="img-account-profile rounded-circle mb-2" src="{{ $user->gravatar }}" alt="Gravatar" />
                         <div class="small font-italic text-muted mb-4">Modifier sur <a href="https://gravatar.com" target="_blank" rel="noopener">Gravatar</a></div>
                     </div>
                 </div>
