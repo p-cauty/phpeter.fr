@@ -11,13 +11,13 @@ class BlogController extends Controller
     public function index(): View
     {
         return view('blog.index', [
-            'blogs' => Blog::latest()->get()
+            'blogs' => Blog::whereNotNull('published_at')->orderBy('published_at', 'desc')->paginate(),
         ]);
     }
 
     public function show(Blog $blog): View
     {
-        if (!$blog->isPublished()) {
+        if (!$blog->isPublished() && !auth()->check()) {
             abort(404);
         }
 

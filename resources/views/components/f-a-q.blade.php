@@ -2,7 +2,7 @@
 <section class="bg-dark py-10">
     <div class="container px-5">
         <div class="row gx-5 my-5 mt-lg-10">
-            <div class="col-lg-6 mb-5">
+            <div class="col-lg-6 mb-5" data-aos="fade-right">
                 <div class="d-flex h-100">
                     <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                     <div class="ms-4">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 mb-5">
+            <div class="col-lg-6 mb-5" data-aos="fade-left">
                 <div class="d-flex h-100">
                     <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                     <div class="ms-4">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
                 <div class="d-flex h-100">
                     <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                     <div class="ms-4">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6" data-aos="fade-left">
                 <div class="d-flex h-100">
                     <div class="icon-stack flex-shrink-0 bg-primary text-white"><i class="fas fa-question"></i></div>
                     <div class="ms-4">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="fade-up">
             <a class="btn btn-primary w-auto" href="https://calendly.com/p-cauty/premier-echange"
                target="_blank" rel="noopener">
                 <i class="fas fa-calendar-alt me-2"></i>

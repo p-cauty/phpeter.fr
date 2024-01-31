@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Str;
 
 /**
  * App\Models\Blog
@@ -18,6 +19,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property \Illuminate\Support\Carbon|null $published_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read string $email_share_url
+ * @property-read string $facebook_share_url
+ * @property-read string $preview
+ * @property-read int $reading_time
+ * @property-read string $twitter_share_url
  * @property-read \App\Models\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|Blog newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Blog newQuery()
@@ -58,5 +64,46 @@ class Blog extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function getPreviewAttribute(): string
+    {
+        // find first <p> element content in html
+        $html = $this->html;
+        $preview = strip_tags(preg_replace("/^.*<p>(.*?)<\/p>.*$/U", '$1', $html));
+
+        return $preview;
+    }
+
+    public function getReadingTimeAttribute(): int
+    {
+        $words = str_word_count(strip_tags($this->html));
+        $minutes = round($words / 200);
+
+        return $minutes ?: 1;
+    }
+
+    public function getTwitterShareUrlAttribute(): string
+    {
+        $url = urlencode(route('blog.show', ['blog' => $this, 'slug' => Str::slug($this->title)]));
+        $title = urlencode($this->title);
+
+        return "https://twitter.com/intent/tweet?text=$title&url=$url";
+    }
+
+    public function getFacebookShareUrlAttribute(): string
+    {
+        $url = urlencode(route('blog.show', ['blog' => $this, 'slug' => Str::slug($this->title)]));
+        $title = urlencode($this->title);
+
+        return "https://www.facebook.com/sharer/sharer.php?u=$url&quote=$title";
+    }
+
+    public function getEmailShareUrlAttribute(): string
+    {
+        $url = urlencode(route('blog.show', ['blog' => $this, 'slug' => Str::slug($this->title)]));
+        $title = urlencode($this->title);
+
+        return "mailto:?subject=$title&body=$url";
     }
 }

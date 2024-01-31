@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Str; @endphp
 @php /** @var \App\Models\Blog[] $blogs */ @endphp
 <x-admin-layout>
     <x-slot name="header">
@@ -41,7 +42,12 @@
                                 <tbody>
                                 @foreach ($blogs as $blog)
                                     <tr>
-                                        <td>{{ $blog->title }}</td>
+                                        <td>
+                                            <a href="{{ route('blog.show', ['blog' => $blog, 'slug' => Str::slug($blog->title)]) }}"
+                                               target="_blank">
+                                                {{ $blog->title }}
+                                            </a>
+                                        </td>
                                         <td>{{ $blog->user->fullname }}</td>
                                         <td>{!!
                                             $blog->isPublished() ?
@@ -51,15 +57,41 @@
                                         <td>{{ $blog->created_at->format('d/m/Y H:i') }}</td>
                                         <td>{{ $blog->updated_at->format('d/m/Y H:i') }}</td>
                                         <td>
+                                            @if (!$blog->isPublished())
+                                                <form action="{{ route('admin.blogs.publish', $blog) }}"
+                                                      method="POST" class="d-inline">
+                                                    @method('PUT')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-success btn-sm"
+                                                            data-bs-toggle="tooltip" data-bs-palcement="top"
+                                                            title="Publier">
+                                                        <i class="fas fa-check-circle"></i>
+                                                    </button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('admin.blogs.draft', $blog) }}"
+                                                      method="POST" class="d-inline">
+                                                    @method('PUT')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-warning btn-sm"
+                                                            data-bs-toggle="tooltip" data-bs-palcement="top"
+                                                            title="Retirer">
+                                                        <i class="fas fa-eye-slash"></i>
+                                                    </button>
+                                                </form>
+                                            @endif
                                             <a href="{{ route('admin.blogs.edit', $blog) }}"
-                                               class="btn btn-primary btn-sm">
+                                               class="btn btn-primary btn-sm"
+                                               data-bs-toggle="tooltip" data-bs-palcement="top" title="Modifier">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             <form action="{{ route('admin.blogs.destroy', $blog) }}"
                                                   method="POST" class="d-inline">
-                                                @csrf
                                                 @method('DELETE')
+                                                @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm"
+                                                        data-bs-toggle="tooltip" data-bs-palcement="top"
+                                                        title="Supprimer"
                                                         onclick="return confirm('Voulez-vous vraiment supprimer cet article ? Cette action est irréversible.')">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>

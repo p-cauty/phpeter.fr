@@ -23,7 +23,7 @@ class CaseStudyController extends Controller
      */
     public function show(CaseStudy $case_study): View
     {
-        if (!$case_study->isPublished()) {
+        if (!$case_study->isPublished() && !auth()->check()) {
             abort(404);
         }
 

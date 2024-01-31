@@ -1,11 +1,12 @@
+@php /** @var \App\Models\Blog[] $blogs */ @endphp
 <x-front-layout>
-    <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-60" style="background-image: url(https://source.unsplash.com/PTRzqc_h1r4/1600x900)">
+    <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-80 pt-15" style="background-image: url({{ asset('img/blog.jpg') }})">
         <div class="page-header-ui-content position-relative">
             <div class="container px-5 text-center">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h1 class="page-header-ui-title mb-3">Publications</h1>
-                        <p class="page-header-ui-text mb-0">Browse articles, keep up to date, and learn more on our blog!</p>
+                        <h1 class="text-white mb-3">Blog</h1>
+                        <p class="page-header-ui-text mb-0">Retrouvez ici nos derniers billets & tutos</p>
                     </div>
                 </div>
             </div>
@@ -13,152 +14,69 @@
     </header>
     <section class="bg-light py-10">
         <div class="container px-5">
-            <a class="card post-preview post-preview-featured lift mb-5 overflow-hidden" href="#!">
-                <div class="row g-0">
-                    <div class="col-lg-5"><div class="post-preview-featured-img" style="background-image: url('https://source.unsplash.com/vZJdYl5JVXY/660x360')"></div></div>
-                    <div class="col-lg-7">
-                        <div class="card-body">
-                            <div class="py-5">
-                                <h5 class="card-title">Boots on the Ground, Inclusive Thought Provoking Ideas</h5>
-                                <p class="card-text">Empower communities and energize engaging ideas; scale and impact do-gooders while disruptring industries. Venture philanthropy benefits corporations and people by moving the needle.</p>
-                            </div>
-                            <hr />
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-1.png" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">Valerie Luna</div>
-                                    <div class="post-preview-meta-details-date">Feb 5 &middot; 6 min read</div>
+            @if (isset($blogs[0]))
+                <a class="card post-preview post-preview-featured lift mb-5 overflow-hidden" data-aos="fade-left"
+                   href="{{ route('blog.show', ['blog' => $blogs[0], 'slug' => \Illuminate\Support\Str::slug($blogs[0]->title)]) }}">
+                    <div class="row g-0">
+                        <div class="col-lg-5"><div class="post-preview-featured-img"
+                            style="background-image: url({{ \Illuminate\Support\Facades\Storage::url($blogs[0]->illustration) }})"></div></div>
+                        <div class="col-lg-7">
+                            <div class="card-body">
+                                <div class="py-5">
+                                    <h5 class="card-title">{{ $blogs[0]->title }}</h5>
+                                    <p class="card-text">
+                                        {{ \Illuminate\Support\Str::limit($blogs[0]->preview, 200) }}
+                                    </p>
+                                </div>
+                                <hr />
+                                <div class="post-preview-meta">
+                                    <img class="post-preview-meta-img" src="{{ $blogs[0]->user->gravatar }}" />
+                                    <div class="post-preview-meta-details">
+                                        <div class="post-preview-meta-details-name">{{ $blogs[0]->user->fullname }}</div>
+                                        <div class="post-preview-meta-details-date">
+                                            {{ $blogs[0]->published_at->format('d/m/Y') }}
+                                            &middot;
+                                            {{ $blogs[0]->reading_time }} min</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+                @php unset($blogs[0]) @endphp
+            @endif
             <div class="row gx-5">
-                <div class="col-md-6 col-xl-4 mb-5">
-                    <a class="card post-preview lift h-100" href="#!">
-                        <img class="card-img-top" src="https://source.unsplash.com/KE0nC8-58MQ/660x360" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Invest In Social Impact</h5>
-                            <p class="card-text">Expose the truth, problem-solvers impact mobilized green spaces.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-2.png" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">Aariz Fischer</div>
-                                    <div class="post-preview-meta-details-date">Feb 4 &middot; 5 min read</div>
+                @foreach ($blogs as $blog)
+                    <div class="col-md-6 col-xl-4 mb-5" data-aos="fade-up">
+                        <a class="card post-preview lift h-100"
+                            href="{{ route('blog.show', ['blog' => $blog, 'slug' => \Illuminate\Support\Str::slug($blog->title)]) }}">
+                            <img class="card-img-top" src="{{ \Illuminate\Support\Facades\Storage::url($blog->illustration) }}" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $blog->title }}</h5>
+                                <p class="card-text">{{ \Illuminate\Support\Str::limit($blog->preview) }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="post-preview-meta">
+                                    <img class="post-preview-meta-img" src="{{ $blog->user->gravatar }}" />
+                                    <div class="post-preview-meta-details">
+                                        <div class="post-preview-meta-details-name">{{ $blog->user->fullname }}</div>
+                                        <div class="post-preview-meta-details-date">
+                                            {{ $blog->published_at->format('d/m/Y') }}
+                                            &middot;
+                                            {{ $blog->reading_time }} min
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-xl-4 mb-5">
-                    <a class="card post-preview lift h-100" href="#!">
-                        <img class="card-img-top" src="https://source.unsplash.com/hGV2TfOh0ns/660x360" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Save the World, Social Entrepreneur</h5>
-                            <p class="card-text">Contextualize co-creation and do good while building your startup.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-3.png" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">Alicia Allen</div>
-                                    <div class="post-preview-meta-details-date">Feb 3 &middot; 7 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-xl-4 mb-5">
-                    <a class="card post-preview lift h-100" href="#!">
-                        <img class="card-img-top" src="https://source.unsplash.com/9l_326FISzk/660x360" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Design Thinking Benefits Corporation Thought Leadership</h5>
-                            <p class="card-text">Global changemakers, a state of play releives stress and creates inspirational work environments.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-4.png" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">Mahesh Kumar</div>
-                                    <div class="post-preview-meta-details-date">Feb 1 &middot; 4 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-xl-4 mb-5">
-                    <a class="card post-preview lift h-100" href="#!">
-                        <img class="card-img-top" src="https://source.unsplash.com/oqStl2L5oxI/660x360" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Collaborative Consumption, Human-Centered Technology Thought Leader Systems</h5>
-                            <p class="card-text">Milestones theory of change, an effective paradigm, exposes the truth and best practices to uplift equal opportunity.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-5.png" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">William Cole</div>
-                                    <div class="post-preview-meta-details-date">Jan 30 &middot; 12 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-xl-4 mb-5">
-                    <a class="card post-preview lift h-100" href="#!">
-                        <img class="card-img-top" src="https://source.unsplash.com/Oalh2MojUuk/660x360" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Co-create, Empower - Moving the Needle on Investor Interests</h5>
-                            <p class="card-text">Scalable efficient systems and thinking as a social entrepreneur creates a transparent, targeted vison.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-1.png" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">Valerie Luna</div>
-                                    <div class="post-preview-meta-details-date">Jan 29 &middot; 4 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-xl-4 mb-5">
-                    <a class="card post-preview lift h-100" href="#!">
-                        <img class="card-img-top" src="https://source.unsplash.com/-uHVRvDr7pg/660x360" alt="..." />
-                        <div class="card-body">
-                            <h5 class="card-title">Inclusive Shared Units of Analysis</h5>
-                            <p class="card-text">Commit to inspiring social capital, social capital inspires the body and the mind.</p>
-                        </div>
-                        <div class="card-footer">
-                            <div class="post-preview-meta">
-                                <img class="post-preview-meta-img" src="assets/img/illustrations/profiles/profile-6.png" />
-                                <div class="post-preview-meta-details">
-                                    <div class="post-preview-meta-details-name">Amy Love</div>
-                                    <div class="post-preview-meta-details-date">Jan 25 &middot; 7 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination pagination-blog justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#!" aria-label="Previous"><span aria-hidden="true">«</span></a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#!">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                    <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">12</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#!" aria-label="Next"><span aria-hidden="true">»</span></a>
-                    </li>
-                </ul>
-            </nav>
+
+            {{ $blogs->links() }}
         </div>
     </section>
+    <x-statistics />
+    <x-testimonials />
+    <x-f-a-q />
 </x-front-layout>

@@ -1,8 +1,10 @@
+@php use Illuminate\Support\Facades\Storage; @endphp
 @php /** @var \App\Models\Blog $blog */ @endphp
 <x-admin-layout>
     <x-slot name="header">
-        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-            <div class="container-xl px-4">
+        <header class="page-header page-header-dark bg-img-cover overlay pb-10"
+                style="background-image:url({{ Storage::url($blog->illustration) }}">
+            <div class="container-xl px-4" style="opacity: 0.9999">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
@@ -43,7 +45,8 @@
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
-                                    <input type="checkbox" name="publish" id="publish" class="form-check me-2" {{ $blog->isPublished() ? 'checked' : '' }} />
+                                    <input type="checkbox" name="publish" id="publish"
+                                           class="form-check me-2" {{ $blog->isPublished() ? 'checked' : '' }} />
                                     <label for="publish" class="form-check-label">Publier l'article</label>
                                 </div>
                                 <button type="submit" class="btn btn-success mt-3">

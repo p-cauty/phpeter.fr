@@ -4,7 +4,7 @@
         <div class="page-header-ui-content pt-5 pt-lg-10">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 mb-3" data-aos="fade-up">
+                    <div class="col-lg-6 mb-3" data-aos="fade-left">
                         <h1 class="page-header-ui-title">Sites web & logiciels pour les Pros</h1>
                         <hr />
                         <p class="page-header-ui-text mb-5">
@@ -171,7 +171,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row gx-5 justify-content-center">
+            <div class="row gx-5 justify-content-center" data-aos="fade-up">
                 <a href="{{ route('case-studies.index') }}" class="w-auto btn btn-primary">
                     <i class="fas fa-eye me-2"></i>
                     Voir les études de cas

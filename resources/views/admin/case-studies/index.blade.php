@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Str; @endphp
 @php /** @var \App\Models\CaseStudy[] $case_studies */ @endphp
 <x-admin-layout>
     <x-slot name="header">
@@ -29,18 +30,23 @@
                         <div class="table-responsive">
                             <table id="datatable" class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
-                                        <th>Titre</th>
-                                        <th>Statut</th>
-                                        <th>Création</th>
-                                        <th>Modification</th>
-                                        <th>Actions</th>
-                                    </tr>
+                                <tr>
+                                    <th>Titre</th>
+                                    <th>Statut</th>
+                                    <th>Création</th>
+                                    <th>Modification</th>
+                                    <th>Actions</th>
+                                </tr>
                                 </thead>
                                 <tbody>
                                 @foreach ($case_studies as $case_study)
                                     <tr>
-                                        <td>{{ $case_study->title }}</td>
+                                        <td>
+                                            <a href="{{ route('case-studies.show', ['case_study' => $case_study, 'slug' => Str::slug($case_study->title)]) }}"
+                                                  target="_blank">
+                                                {{ $case_study->title }}
+                                            </a>
+                                        </td>
                                         <td>{!!
                                             $case_study->isPublished() ?
                                                 '<span class="badge bg-success rounded-pill">Publié</span>' :
@@ -49,14 +55,39 @@
                                         <td>{{ $case_study->created_at->format('d/m/Y H:i') }}</td>
                                         <td>{{ $case_study->updated_at->format('d/m/Y H:i') }}</td>
                                         <td>
-                                            <a href="{{ route('admin.case-studies.edit', $case_study) }}" class="btn btn-primary btn-sm">
+                                            @if (!$case_study->isPublished())
+                                                <form action="{{ route('admin.case-studies.publish', $case_study) }}"
+                                                      method="POST" class="d-inline">
+                                                    @method('PUT')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-success btn-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Publier">
+                                                        <i class="fas fa-check-circle"></i>
+                                                    </button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('admin.case-studies.draft', $case_study) }}"
+                                                      method="POST" class="d-inline">
+                                                    @method('PUT')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-warning btn-sm"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="Retirer">
+                                                        <i class="fas fa-eye-slash"></i>
+                                                    </button>
+                                                </form>
+                                            @endif
+                                            <a href="{{ route('admin.case-studies.edit', $case_study) }}"
+                                               class="btn btn-primary btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <form action="{{ route('admin.case-studies.destroy', $case_study) }}" method="POST" class="d-inline">
+                                            <form action="{{ route('admin.case-studies.destroy', $case_study) }}"
+                                                  method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm"
-                                                    onclick="return confirm('Voulez-vous vraiment supprimer cette étude de cas ? Cette action est irréversible.')">
+                                                        onclick="return confirm('Voulez-vous vraiment supprimer cette étude de cas ? Cette action est irréversible.')">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </form>
