@@ -12,21 +12,25 @@
         <link href="{{ asset('css/markdown.css') }}" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}" />
 
-        <title>Sites web & logiciels pour les Pros - {{ config('app.name') }}</title>
-        <meta name="description" content="PHPeter, le partenaire des Pros pour des sites web et logiciels sur mesure. Expert en développement, nous concrétisons vos idées en applications métiers, vitrines en ligne percutantes et solutions logicielles innovantes. Avec la maintenance et le support inclus, donnez une nouvelle dimension à votre présence en ligne." />
-        <meta name="author" content="Peter Cauty" />
+        <title>{{ $title ?? config('app.title') }} - {{ config('app.name') }}</title>
+        <meta name="description" content="{{ $description ?? config('app.description') }}" />
         <link rel="canonical" href="{{ url()->current() }}" />
+
         <meta property="og:locale" content="fr_FR" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Sites web &amp; logiciels pour les Pros &#8211; PHPeter" />
-        <meta property="og:description" content="PHPeter, le partenaire des Pros pour des sites web et logiciels sur mesure. Experts en développement, nous concrétisons vos idées en applications métiers, vitrines en ligne percutantes et solutions logicielles innovantes. Avec la maintenance et le support inclus, donnez une nouvelle dimension à votre présence en ligne." />
+        <meta property="og:title" content="{{ $title ?? config('app.title') }} - {{ config('app.name') }}" />
+        <meta property="og:description" content="{{ $description ?? config('app.description') }}" />
         <meta property="og:url" content="{{ url()->current() }}" />
         <meta property="og:site_name" content="PHPeter" />
-        <meta property="og:image" content="{{ asset('img/social.jpg') }}" />
+        <meta property="og:image" content="{{ $illustration ?? asset('img/social.jpg') }}" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="675" />
         <meta property="og:image:type" content="image/jpeg" />
+
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ $title ?? config('app.title') }} - {{ config('app.name') }}" />
+        <meta name="twitter:description" content="{{ $description ?? config('app.description') }}" />
+        <meta name="twitter:image" content="{{ $illustration ?? asset('img/social.jpg') }}" />
         <meta name="twitter:site" content="@p_cauty" />
     </head>
     <body>

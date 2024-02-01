@@ -1,5 +1,6 @@
 @php /** @var \App\Models\CaseStudy[] $case_studies */ @endphp
 <x-front-layout>
+    <x-slot name="title">Études de cas - {{ config('app.title') }}</x-slot>
     <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-80 pt-15" style="background-image:url({{ asset('img/case-studies.jpg') }})">
         <div class="page-header-ui-content">
             <div class="container px-5 text-center">

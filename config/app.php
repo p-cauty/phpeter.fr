@@ -5,6 +5,10 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+    'title' => 'Sites web & logiciels pour les Pros',
+    'description' => 'PHPeter, le partenaire des Pros pour des sites web et logiciels sur mesure. Expert en développement, nous concrétisons vos idées en applications métiers, vitrines en ligne percutantes et solutions logicielles innovantes. Avec la maintenance et le support inclus, donnez une nouvelle dimension à votre présence en ligne.',
+    'author' => 'Peter Cauty',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

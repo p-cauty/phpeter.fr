@@ -1,5 +1,8 @@
 @php /** @var \App\Models\CaseStudy $case_study */ @endphp
 <x-front-layout>
+    <x-slot name="title">{{ $case_study->title }} - Étude de cas</x-slot>
+    <x-slot name="description">{{ $case_study->description }}</x-slot>
+    <x-slot name="illustration">{{ config('app.url') . \Illuminate\Support\Facades\Storage::url($case_study->illustration) }}</x-slot>
     <section class="bg-light py-5 py-lg-10">
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">

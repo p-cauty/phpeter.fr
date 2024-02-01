@@ -1,5 +1,8 @@
 @php /** @var \App\Models\Blog $blog */ @endphp
 <x-front-layout>
+    <x-slot name="title">{{ $blog->title }}</x-slot>
+    <x-slot name="description">{{ \Illuminate\Support\Str::limit($blog->preview, 150) }}</x-slot>
+    <x-slot name="illustration">{{ config('app.url') . \Illuminate\Support\Facades\Storage::url($blog->illustration) }}</x-slot>
     <section class="bg-light py-5 py-lg-10">
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">

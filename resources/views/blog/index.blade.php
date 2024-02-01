@@ -1,5 +1,6 @@
 @php /** @var \App\Models\Blog[] $blogs */ @endphp
 <x-front-layout>
+    <x-slot name="title">Blog - {{ config('app.title') }}</x-slot>
     <header class="page-header-ui page-header-ui-dark bg-img-cover overlay overlay-80 pt-15" style="background-image: url({{ asset('img/blog.jpg') }})">
         <div class="page-header-ui-content position-relative">
             <div class="container px-5 text-center">
