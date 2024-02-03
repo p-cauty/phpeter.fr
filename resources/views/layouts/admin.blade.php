@@ -77,6 +77,10 @@
                                 <div class="nav-link-icon"><i data-feather="feather"></i></div>
                                 Blog
                             </a>
+                            <a class="nav-link {{ routeIs('admin.attachments.*') ? 'active' : '' }}" href="{{ route('admin.attachments.index') }}">
+                                <div class="nav-link-icon"><i data-feather="file"></i></div>
+                                Pièces jointes
+                            </a>
 
                             <a class="nav-link mt-5" href="{{ route('home') }}">
                                 <div class="nav-link-icon"><i data-feather="external-link"></i></div>
