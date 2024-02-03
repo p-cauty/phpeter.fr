@@ -42,14 +42,18 @@
 }
 
 .markdown .alert {
-    display: flex;
-    align-items: center;
+    position: relative;
+    padding-left: 3.25rem;
 }
 
 .markdown .alert:before {
+    position: absolute;
+    top: calc(50% - .75rem);
+    left: 1rem;
     font-weight: 900;
     font-family: "Font Awesome 6 Free";
     font-size: 1.5rem;
+    line-height: 1.5rem;
     margin-right: 20px;
 }
 
