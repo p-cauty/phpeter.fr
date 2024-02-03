@@ -37,7 +37,8 @@
 .markdown img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(33, 40, 50, 0.2) !important;
 }
 
 .markdown .alert {
