@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AttachmentController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\HomeController;
@@ -25,6 +26,8 @@ Route::prefix('admin')->group(function() {
             Route::put('/blogs/{blog}/draft', [BlogController::class, 'draft'])->name('blogs.draft');
             Route::resource('blogs', BlogController::class)
                 ->except(['show']);
+
+            Route::resource('attachments', AttachmentController::class)->only(['index', 'store', 'destroy']);
         });
     });
 });
