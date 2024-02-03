@@ -41,7 +41,7 @@ class CaseStudyController extends Controller
             'content' => ['required', 'string'],
         ]);
 
-        $validated['illustration'] = $request->file('illustration')->storePublicly('public/case-studies');
+        $validated['illustration'] = $request->file('illustration')->storePublicly('case-studies', 'public');
         if ($request->has('publish')) {
             $validated['published_at'] = now();
         }
@@ -98,7 +98,7 @@ class CaseStudyController extends Controller
         ]);
 
         if ($request->hasFile('illustration')) {
-            $validated['illustration'] = $request->file('illustration')->storePublicly('public/case-studies');
+            $validated['illustration'] = $request->file('illustration')->storePublicly('case-studies', 'public');
             Storage::delete($case_study->illustration);
         }
 

@@ -41,7 +41,7 @@ class BlogController extends Controller
             'content' => ['required', 'string'],
         ]);
 
-        $validated['illustration'] = $request->file('illustration')->storePublicly('public/blogs');
+        $validated['illustration'] = $request->file('illustration')->storePublicly('blogs', 'public');
         if ($request->has('publish')) {
             $validated['published_at'] = now();
         }
@@ -98,7 +98,7 @@ class BlogController extends Controller
         ]);
 
         if ($request->hasFile('illustration')) {
-            $validated['illustration'] = $request->file('illustration')->storePublicly('public/blogs');
+            $validated['illustration'] = $request->file('illustration')->storePublicly('blogs', 'public');
         }
 
         if (!$request->has('publish')) {
