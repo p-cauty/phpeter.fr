@@ -160,12 +160,6 @@
                                                     Fiche entreprise
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="#!">
-                                                    <i class="fas fa-file-signature pe-1"></i>
-                                                    CGV
-                                                </a>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
