@@ -11,4 +11,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function legal(): View
+    {
+        return view('legal');
+    }
 }

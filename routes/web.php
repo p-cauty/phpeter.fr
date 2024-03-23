@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])
     ->name('home');
+Route::get('mentions-legales', [HomeController::class, 'legal'])
+    ->name('legal');
 
 Route::get('etudes-de-cas', [CaseStudyController::class, 'index'])
     ->name('case-studies.index');

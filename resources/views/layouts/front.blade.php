@@ -149,7 +149,7 @@
                                         <div class="text-uppercase-expanded text-xs mb-4">Légal</div>
                                         <ul class="list-unstyled mb-0">
                                             <li class="mb-2">
-                                                <a href="#!">
+                                                <a href="{{ route('legal') }}">
                                                     <i class="fas fa-file-alt pe-1"></i>
                                                     Mentions légales
                                                 </a>
