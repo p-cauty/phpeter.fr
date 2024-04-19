@@ -7,7 +7,7 @@
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 markdown">
-                    <h1>{{ $case_study->title }}</h1>
+                    <h2>{{ $case_study->title }}</h2>
                     <h3 class="text-gray-700">Étude de cas</h3>
                     <p class="lead">
                         {{ $case_study->description }}

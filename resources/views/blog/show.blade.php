@@ -8,7 +8,7 @@
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-10 col-xl-8">
                     <div class="single-post">
-                        <h1>{{ $blog->title }}</h1>
+                        <h2>{{ $blog->title }}</h2>
                         <div class="d-flex align-items-center justify-content-between mb-5">
                             <div class="single-post-meta me-4">
                                 <img class="single-post-meta-img" src="{{ $blog->user->gravatar }}" />
