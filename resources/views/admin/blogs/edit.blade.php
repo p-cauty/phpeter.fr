@@ -24,7 +24,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('admin.blogs.update', ['blog' => $blog]) }}" method="post"
+                        <form action="{{ route('admin.blogs.update', $blog) }}" method="post"
                               enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
@@ -44,7 +44,12 @@
                                     <textarea class="form-control font-monospace" name="content" id="content" rows="50"
                                               required>{{ old('content') ?? $blog->content }}</textarea>
                                 </div>
-                                <div class="col-md-6" id="parsed"></div>
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label">Aperçu de l'article</label>
+                                    <div class="rounded border border-1 border-gray-400 parsed p-3 markdown" id="parsed">
+                                        {!! $blog->html !!}
+                                    </div>
+                                </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
@@ -63,18 +68,20 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
+    <script>
         const content = document.getElementById('content');
         const parsed = document.getElementById('parsed');
 
         content.onchange = e => {
-            fetch('{{ route('admin.markdown.parse') }}', {
-                method: 'POST',
+            fetch('{{ route('admin.blogs.parse', $blog) }}', {
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
                 },
-                body: JSON.stringify({content: e.target.value})
+                body: JSON.stringify({
+                    content: e.target.value,
+                })
             })
                 .then(response => response.json())
                 .then(data => parsed.innerHTML = data.html)

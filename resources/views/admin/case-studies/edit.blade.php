@@ -43,10 +43,18 @@
                                     (optionnel)</label>
                                 <input type="file" class="form-control" name="illustration" id="illustration"/>
                             </div>
-                            <div class="mb-3">
-                                <label for="content" class="form-label">Contenu de l'étude (#markdown)</label>
-                                <textarea class="form-control font-monospace" name="content" id="content" rows="20"
-                                          required>{{ old('content') ?? $case_study->content }}</textarea>
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label for="content" class="form-label">Contenu de l'étude (#markdown)</label>
+                                    <textarea class="form-control font-monospace" name="content" id="content" rows="20"
+                                              required>{{ old('content') ?? $case_study->content }}</textarea>
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label class="form-label">Aperçu de l'étude de cas</label>
+                                    <div class="rounded border border-1 border-gray-400 parsed p-3 markdown" id="parsed">
+                                        {!! $case_study->html !!}
+                                    </div>
+                                </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
@@ -65,4 +73,24 @@
             </div>
         </div>
     </div>
+    <script>
+        const content = document.getElementById('content');
+        const parsed = document.getElementById('parsed');
+
+        content.onchange = e => {
+            fetch('{{ route('admin.case-studies.parse', $case_study) }}', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    content: e.target.value,
+                })
+            })
+                .then(response => response.json())
+                .then(data => parsed.innerHTML = data.html)
+                .catch(error => console.error(error));
+        }
+    </script>
 </x-admin-layout>

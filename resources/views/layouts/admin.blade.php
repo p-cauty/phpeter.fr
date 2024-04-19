@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name') }} - Admin</title>
-        <link href="{{ asset('css/admin.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/admin/styles.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/markdown.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/admin/custom.css') }}" rel="stylesheet"/>
         <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.png') }}"/>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
         <script data-search-pseudo-elements defer

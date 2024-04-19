@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\CaseStudy;
 use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -22,14 +24,6 @@ class CaseStudyController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): View
-    {
-        return view('admin.case-studies.create');
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request): RedirectResponse
@@ -38,20 +32,13 @@ class CaseStudyController extends Controller
             'title' => ['required', 'string'],
             'description' => ['required', 'string'],
             'illustration' => ['required', 'image', 'max:1024'],
-            'content' => ['required', 'string'],
         ]);
 
         $validated['illustration'] = $request->file('illustration')->storePublicly('case-studies', 'public');
-        if ($request->has('publish')) {
-            $validated['published_at'] = now();
-        }
 
-        CaseStudy::create([
-            ...$validated,
-            'html' => markdown($validated['content'])
-        ]);
+        $case_study = CaseStudy::create($validated);
 
-        return redirect()->route('admin.case-studies.index')
+        return redirect()->route('admin.case-studies.edit', $case_study)
             ->with('success', 'L\'étude de cas a bien été créée.');
     }
 
@@ -115,6 +102,22 @@ class CaseStudyController extends Controller
 
         return redirect()->route('admin.case-studies.edit', ['case_study' => $case_study])
             ->with('success', 'L\'étude de cas a bien été modifiée.');
+    }
+
+    public function parse(FormRequest $request, CaseStudy $case_study): JsonResponse
+    {
+        $validated = $request->validate([
+            'content' => ['required', 'string'],
+        ]);
+
+        $case_study->update([
+            'content' => $validated['content'],
+            'html' => markdown($validated['content']),
+        ]);
+
+        return response()->json([
+            'html' => $case_study->html,
+        ]);
     }
 
     /**

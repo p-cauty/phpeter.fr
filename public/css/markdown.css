@@ -41,6 +41,18 @@
     box-shadow: 0 0.125rem 0.25rem 0 rgba(33, 40, 50, 0.2) !important;
 }
 
+.markdown .legend {
+    margin-bottom: 0;
+}
+
+.markdown .legend + p {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #69707a;
+    margin-top: .5rem;
+}
+
 .markdown .alert {
     position: relative;
     padding-left: 3.25rem;

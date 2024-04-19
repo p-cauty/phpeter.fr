@@ -35,6 +35,11 @@ class CaseStudy extends Model
 {
     use HasFactory;
 
+    protected $attributes = [
+        'content' => '',
+        'html' => '',
+    ];
+
     protected $fillable = [
         'title',
         'description',

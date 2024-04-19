@@ -18,17 +18,17 @@ Route::prefix('admin')->group(function() {
             Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
             Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-            Route::post('/markdown/parse', [MarkdownController::class, 'parse'])->name('markdown.parse');
-
             Route::put('/case-studies/{case_study}/publish', [CaseStudyController::class, 'publish'])->name('case-studies.publish');
             Route::put('/case-studies/{case_study}/draft', [CaseStudyController::class, 'draft'])->name('case-studies.draft');
+            Route::put('/case-studies/{case_study}/parse', [CaseStudyController::class, 'parse'])->name('case-studies.parse');
             Route::resource('case-studies', CaseStudyController::class)
-                ->except(['show']);
+                ->except(['show', 'create']);
 
             Route::put('/blogs/{blog}/publish', [BlogController::class, 'publish'])->name('blogs.publish');
             Route::put('/blogs/{blog}/draft', [BlogController::class, 'draft'])->name('blogs.draft');
+            Route::put('/blogs/{blog}/parse', [BlogController::class, 'parse'])->name('blogs.parse');
             Route::resource('blogs', BlogController::class)
-                ->except(['show']);
+                ->except(['show', 'create']);
 
             Route::resource('attachments', AttachmentController::class)->only(['index', 'store', 'destroy']);
         });

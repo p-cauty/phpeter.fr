@@ -128,7 +128,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" form="new-blog" class="btn btn-primary">
+                    <button type="submit" form="new-blog" class="btn btn-success">
                         <i class="fas fa-plus-circle me-2"></i>
                         Créer l'article
                     </button>

@@ -1,0 +1,9 @@
+.html {
+    scroll-behavior: smooth;
+}
+
+.parsed {
+    max-height: 800px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

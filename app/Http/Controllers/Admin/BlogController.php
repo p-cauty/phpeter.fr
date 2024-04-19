@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -20,14 +20,6 @@ class BlogController extends Controller
         return view('admin.blogs.index', [
             'blogs' => Blog::latest()->get()
         ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): View
-    {
-        return view('admin.blogs.create');
     }
 
     /**
@@ -47,7 +39,7 @@ class BlogController extends Controller
             'user_id' => auth()->id(),
         ]);
 
-        return redirect()->route('admin.blogs.edit', ['blog' => $blog])
+        return redirect()->route('admin.blogs.edit', $blog)
             ->with('success', 'L\'article a bien été créé.');
     }
 
@@ -84,7 +76,7 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Blog $blog): RedirectResponse
+    public function update(FormRequest $request, Blog $blog): RedirectResponse|JsonResponse
     {
         $validated = $request->validate([
             'title' => ['required', 'string'],
@@ -107,10 +99,32 @@ class BlogController extends Controller
             'html' => markdown($validated['content'])
         ]);
 
+        if ($request->has('json')) {
+            return response()->json([
+                'html' => $blog->html
+            ]);
+        }
+
         return redirect()->route('admin.blogs.edit', [
             'blog' => $blog,
             'slug' => Str::slug($blog->title)
         ])->with('success', 'L\'article a bien été modifié.');
+    }
+
+    public function parse(FormRequest $request, Blog $blog): JsonResponse
+    {
+        $validated = $request->validate([
+            'content' => ['required', 'string'],
+        ]);
+
+        $blog->update([
+            'content' => $validated['content'],
+            'html' => markdown($validated['content']),
+        ]);
+
+        return response()->json([
+            'html' => $blog->html,
+        ]);
     }
 
     /**
