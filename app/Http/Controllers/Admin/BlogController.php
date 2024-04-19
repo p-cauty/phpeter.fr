@@ -38,21 +38,16 @@ class BlogController extends Controller
         $validated = $request->validate([
             'title' => ['required', 'string'],
             'illustration' => ['required', 'image', 'max:1024'],
-            'content' => ['required', 'string'],
         ]);
 
         $validated['illustration'] = $request->file('illustration')->storePublicly('blogs', 'public');
-        if ($request->has('publish')) {
-            $validated['published_at'] = now();
-        }
 
-        Blog::create([
+        $blog = Blog::create([
             ...$validated,
             'user_id' => auth()->id(),
-            'html' => markdown($validated['content'])
         ]);
 
-        return redirect()->route('admin.blogs.index')
+        return redirect()->route('admin.blogs.edit', ['blog' => $blog])
             ->with('success', 'L\'article a bien été créé.');
     }
 

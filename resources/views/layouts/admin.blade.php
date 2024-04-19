@@ -124,7 +124,9 @@
         <script src="{{ asset('js/simple-datatables.min.js') }}"></script>
         <script>
             let table = document.querySelector('#datatable');
-            let dataTable = new simpleDatatables.DataTable(table);
+            if (table) {
+                let dataTable = new simpleDatatables.DataTable(table);
+            }
         </script>
     </body>
 </html>

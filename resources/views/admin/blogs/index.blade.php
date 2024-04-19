@@ -23,10 +23,10 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ route('admin.blogs.create') }}" class="btn btn-success mb-3">
+                        <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#newBlogModal">
                             <i class="fas fa-plus-circle me-2"></i>
                             Nouvel article
-                        </a>
+                        </button>
                         <div class="table-responsive">
                             <table id="datatable" class="table table-bordered table-striped">
                                 <thead>
@@ -103,6 +103,35 @@
                             </table>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="newBlogModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nouvel article de blog</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="new-blog" method="post" action="{{ route('admin.blogs.store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Titre de l'article</label>
+                            <input class="form-control" type="text" name="title" id="title" value="{{ old('title') }}" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="illustration" class="form-label">Image de couverture</label>
+                            <input type="file" class="form-control" name="illustration" id="illustration" required />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="new-blog" class="btn btn-primary">
+                        <i class="fas fa-plus-circle me-2"></i>
+                        Créer l'article
+                    </button>
                 </div>
             </div>
         </div>

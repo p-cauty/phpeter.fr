@@ -43,6 +43,11 @@ class Blog extends Model
 {
     use HasFactory;
 
+    protected $attributes = [
+        'content' => '',
+        'html' => '',
+    ];
+
     protected $fillable = [
         'user_id',
         'title',
