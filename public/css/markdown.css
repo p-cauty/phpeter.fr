@@ -34,6 +34,10 @@
     overflow: auto;
 }
 
+.markdown p:has(> img) {
+    text-align: center;
+}
+
 .markdown img {
     max-width: 100%;
     height: auto;
@@ -42,7 +46,7 @@
 }
 
 .markdown .legend {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .markdown .legend + p {
