@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="mb-3 col-md-6">
                                     <label for="content" class="form-label">Contenu de l'étude (#markdown)</label>
-                                    <textarea class="form-control font-monospace" name="content" id="content" rows="20"
+                                    <textarea class="form-control font-monospace" name="content" id="content" rows="50"
                                               required>{{ old('content') ?? $case_study->content }}</textarea>
                                 </div>
                                 <div class="mb-3 col-md-6">
