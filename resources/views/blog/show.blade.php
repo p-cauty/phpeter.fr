@@ -47,4 +47,6 @@
     <x-statistics />
     <x-testimonials />
     <x-f-a-q />
+    <script src="{{ asset('js/highlight.min.js') }}"></script>
+    <script>hljs.highlightAll();</script>
 </x-front-layout>

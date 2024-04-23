@@ -15,13 +15,18 @@
                     <hr />
                     {!! $case_study->html !!}
                     <hr class="my-5" />
-                    <div class="text-center"><a class="btn btn-transparent-dark" href="{{ route('case-studies.index') }}">
+                    <div class="text-center">
+                        <a class="btn btn-transparent-dark" href="{{ route('case-studies.index') }}">
                             &larr; Retour aux études de cas
-                    </a></div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <x-statistics />
+    <x-testimonials />
+    <x-f-a-q />
     <script src="{{ asset('js/highlight.min.js') }}"></script>
     <script>hljs.highlightAll();</script>
 </x-front-layout>
