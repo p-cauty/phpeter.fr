@@ -18,12 +18,15 @@
             <div class="row gx-5">
                 @foreach ($case_studies as $case_study)
                 <div class="col-md-6 col-xl-4 my-5 mt-lg-n5" data-aos="fade-up">
-                    <a class="card card-portfolio h-100" href="{{ route('case-studies.show', [
+                    <a class="text-decoration-none card lift h-100" href="{{ route('case-studies.show', [
                         'case_study' => $case_study,
                         'slug' => \Illuminate\Support\Str::of($case_study->title)->slug()
                     ]) }}">
-                        <div class="card-header" style="background-image:url({{ \Illuminate\Support\Facades\Storage::url($case_study->illustration) }})"></div>
-                        <div class="card-body"><div class="card-title">{{ $case_study->title }}</div></div>
+                        <div class="card-img-top" style="height:250px;background:url({{ \Illuminate\Support\Facades\Storage::url($case_study->illustration) }}) no-repeat center/cover;"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $case_study->title }}</h5>
+                            <p class="card-text text-gray-600">{{ $case_study->description }}</p>
+                        </div>
                     </a>
                 </div>
                 @endforeach
