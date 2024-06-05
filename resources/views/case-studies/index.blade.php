@@ -24,8 +24,8 @@
                     ]) }}">
                         <div class="card-img-top" style="height:250px;background:url({{ \Illuminate\Support\Facades\Storage::url($case_study->illustration) }}) no-repeat center/cover;"></div>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $case_study->title }}</h5>
-                            <p class="card-text text-gray-600">{{ $case_study->description }}</p>
+                            <h5 class="card-title fs-5">{{ $case_study->title }}</h5>
+                            <p class="card-text text-gray-600" style="font-size:.9rem">{{ $case_study->description }}</p>
                         </div>
                     </a>
                 </div>
