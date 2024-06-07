@@ -17,7 +17,7 @@
         <div class="container px-5">
             <div class="row gx-5">
                 @foreach ($case_studies as $case_study)
-                <div class="col-md-6 col-xl-4 my-5 mt-lg-n5" data-aos="fade-up">
+                <div class="col-md-6 col-xl-4 my-5 mb-lg-10 mt-lg-n5" data-aos="fade-up">
                     <a class="text-decoration-none card lift h-100" href="{{ route('case-studies.show', [
                         'case_study' => $case_study,
                         'slug' => \Illuminate\Support\Str::of($case_study->title)->slug()
