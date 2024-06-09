@@ -19,7 +19,7 @@ class CaseStudyController extends Controller
     public function index(): View
     {
         return view('admin.case-studies.index', [
-            'case_studies' => CaseStudy::orderByDesc('id')->get(),
+            'case_studies' => CaseStudy::latest('published_at')->orderByDesc('id')->get(),
         ]);
     }
 

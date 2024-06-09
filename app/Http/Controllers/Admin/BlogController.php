@@ -18,7 +18,7 @@ class BlogController extends Controller
     public function index(): View
     {
         return view('admin.blogs.index', [
-            'blogs' => Blog::latest()->get()
+            'blogs' => Blog::latest('published_at')->orderByDesc('id')->get()
         ]);
     }
 

@@ -14,6 +14,13 @@
                     </p>
                     <hr />
                     {!! $case_study->html !!}
+                    <div class="row justify-content-center" data-aos="fade-up">
+                        <a class="btn btn-primary w-auto" href="https://calendly.com/p-cauty/premier-echange"
+                           target="_blank" rel="noopener">
+                            <i class="fas fa-calendar-alt me-2"></i>
+                            Prendre rendez-vous
+                        </a>
+                    </div>
                     <hr class="my-5" />
                     <div class="text-center">
                         <a class="btn btn-transparent-dark" href="{{ route('case-studies.index') }}">
