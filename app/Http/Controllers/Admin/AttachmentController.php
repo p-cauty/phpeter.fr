@@ -16,8 +16,9 @@ class AttachmentController extends Controller
     public function index(): View
     {
         $attachments = collect(glob(public_path('storage/attachments/*')));
-        $attachments = $attachments->mapWithKeys(function ($attachment) {
-            return [md5(basename($attachment)) => basename($attachment)];
+        $attachments = $attachments->sortByDesc('filectime');
+        $attachments = $attachments->mapWithKeys(function ($attachment, $key) {
+            return [$key => basename($attachment)];
         });
 
         return view('admin.attachments.index', [
