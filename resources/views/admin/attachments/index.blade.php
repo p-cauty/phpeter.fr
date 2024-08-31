@@ -40,6 +40,7 @@
                                 <tr>
                                     <th>Vignette</th>
                                     <th>Nom de fichier</th>
+                                    <th>Date d'ajout</th>
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
@@ -60,6 +61,9 @@
                                                     <i class="far fa-clone"></i>
                                                 </span>
                                             </span>
+                                        </td>
+                                        <td>
+                                            {{ date('d/m/Y H:i', filectime(public_path('/storage/attachments/' . $attachment))) }}
                                         </td>
                                         <td>
                                             <form action="{{ route('admin.attachments.destroy', base64_encode($attachment)) }}" method="POST">
